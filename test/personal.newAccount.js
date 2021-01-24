@@ -11,5 +11,5 @@ var tests = [{
     call: 'personal_newAccount'
 }];
 
-testMethod.runTests(['eth','personal'], method, tests);
+testMethod.runTests(['vap','personal'], method, tests);
 

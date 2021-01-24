@@ -16,14 +16,14 @@
 */
 /** @file index.js
  * @authors:
- *   Fabian Vogelsteller <fabian@ethereum.org>
+ *   Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
 "use strict";
 
 var _ = require('underscore');
-var errors = require('web3-core-helpers').errors;
+var errors = require('@vapory/web3-core-helpers').errors;
 var oboe = require('oboe');
 
 

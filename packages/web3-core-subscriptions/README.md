@@ -29,11 +29,11 @@ This will expose the `Web3Subscriptions` object on the window object.
 
 ```js
 // in node.js
-var Web3Subscriptions = require('web3-core-subscriptions');
+var Web3Subscriptions = require('@vapory/web3-core-subscriptions');
 
 var sub = new Web3Subscriptions({
     name: 'subscribe',
-    type: 'eth',
+    type: 'vap',
     subscriptions: {
         'newBlockHeaders': {
             subscriptionName: 'newHeads',
@@ -53,6 +53,6 @@ myCoolLib.subscribe('newBlockHeaders', function(){ ... });
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

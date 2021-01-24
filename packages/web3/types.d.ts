@@ -2,7 +2,7 @@ import { BigNumber } from 'bn.js'
 import * as us from 'underscore'
 
 
-//'{"jsonrpc":"2.0","method":"eth_sendTransaction","params":[{see above}],"id":1}'
+//'{"jsonrpc":"2.0","method":"vap_sendTransaction","params":[{see above}],"id":1}'
 export declare interface JsonRPCRequest {
   jsonrpc: string
   method: string
@@ -267,7 +267,7 @@ export declare interface IpcProvider extends IProvider {
   reset(): undefined
 }
 export type Provider = WebsocketProvider | IpcProvider | HttpProvider;
-type Unit = "kwei" | "femtoether" | "babbage" | "mwei" | "picoether" | "lovelace" | "qwei" | "nanoether" | "shannon" | "microether" | "szabo" | "nano" | "micro" | "milliether" | "finney" | "milli" | "ether" | "kether" | "grand" | "mether" | "gether" | "tether"
+type Unit = "kwei" | "femtovapor" | "babbage" | "mwei" | "picovapor" | "lovelace" | "qwei" | "nanovapor" | "shannon" | "microvapor" | "szabo" | "nano" | "micro" | "millivapor" | "finney" | "milli" | "vapor" | "kvapor" | "grand" | "mvapor" | "gvapor" | "tvapor"
 export type BlockType = "latest" | "pending" | "genesis" | number
 export declare interface Iban { }
 export declare interface Utils {
@@ -352,11 +352,11 @@ export declare interface Providers {
   IpcProvider: new (path: string, net: any) => IpcProvider
 }
 
-export type EthAbiDecodeParametersType = { name: string; type: string; }
-export type EthAbiDecodeParametersResultArray = { [index: number]: any }
-export type EthAbiDecodeParametersResultObject = EthAbiDecodeParametersResultArray & { [key: string]: any }
+export type VapAbiDecodeParametersType = { name: string; type: string; }
+export type VapAbiDecodeParametersResultArray = { [index: number]: any }
+export type VapAbiDecodeParametersResultObject = VapAbiDecodeParametersResultArray & { [key: string]: any }
 
-export declare class Eth {
+export declare class Vap {
   defaultAccount: string
   defaultBlock: BlockType
   BatchRequest: new () => BatchRequest
@@ -375,8 +375,8 @@ export declare class Eth {
     encodeFunctionCall(jsonInterface: object, parameters: any[]): string
     encodeFunctionSignature(name: string | object): string
     decodeParameter(type: string, hex: string): any
-    decodeParameters(types: string[], hex: string): EthAbiDecodeParametersResultArray
-    decodeParameters(types: EthAbiDecodeParametersType[], hex: string): EthAbiDecodeParametersResultObject
+    decodeParameters(types: string[], hex: string): VapAbiDecodeParametersResultArray
+    decodeParameters(types: VapAbiDecodeParametersType[], hex: string): VapAbiDecodeParametersResultObject
   }
   accounts: {
     'new'(entropy?: string): Account

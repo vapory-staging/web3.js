@@ -17,13 +17,13 @@
 /**
  * @file utils.js
  * @author Marek Kotewicz <marek@parity.io>
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
 
 var _ = require('underscore');
-var ethjsUnit = require('ethjs-unit');
+var vapjsUnit = require('vapjs-unit');
 var utils = require('./utils.js');
 var soliditySha3 = require('./soliditySha3.js');
 var randomHex = require('randomhex');
@@ -156,37 +156,37 @@ var asciiToHex = function(str) {
  * Returns value of unit in Wei
  *
  * @method getUnitValue
- * @param {String} unit the unit to convert to, default ether
+ * @param {String} unit the unit to convert to, default vapor
  * @returns {BN} value of the unit (in Wei)
  * @throws error if the unit is not correct:w
  */
 var getUnitValue = function (unit) {
-    unit = unit ? unit.toLowerCase() : 'ether';
-    if (!ethjsUnit.unitMap[unit]) {
-        throw new Error('This unit "'+ unit +'" doesn\'t exist, please use the one of the following units' + JSON.stringify(ethjsUnit.unitMap, null, 2));
+    unit = unit ? unit.toLowerCase() : 'vapor';
+    if (!vapjsUnit.unitMap[unit]) {
+        throw new Error('This unit "'+ unit +'" doesn\'t exist, please use the one of the following units' + JSON.stringify(vapjsUnit.unitMap, null, 2));
     }
     return unit;
 };
 
 /**
- * Takes a number of wei and converts it to any other ether unit.
+ * Takes a number of wei and converts it to any other vapor unit.
  *
  * Possible units are:
  *   SI Short   SI Full        Effigy       Other
- * - kwei       femtoether     babbage
- * - mwei       picoether      lovelace
- * - gwei       nanoether      shannon      nano
- * - --         microether     szabo        micro
- * - --         milliether     finney       milli
- * - ether      --             --
- * - kether                    --           grand
- * - mether
- * - gether
- * - tether
+ * - kwei       femtovapor     babbage
+ * - mwei       picovapor      lovelace
+ * - gwei       nanovapor      shannon      nano
+ * - --         microvapor     szabo        micro
+ * - --         millivapor     finney       milli
+ * - vapor      --             --
+ * - kvapor                    --           grand
+ * - mvapor
+ * - gvapor
+ * - tvapor
  *
  * @method fromWei
  * @param {Number|String} number can be a number, number string or a HEX of a decimal
- * @param {String} unit the unit to convert to, default ether
+ * @param {String} unit the unit to convert to, default vapor
  * @return {String|Object} When given a BN object it returns one as well, otherwise a number
  */
 var fromWei = function(number, unit) {
@@ -196,7 +196,7 @@ var fromWei = function(number, unit) {
         throw new Error('Please pass numbers as strings or BigNumber objects to avoid precision errors.');
     }
 
-    return utils.isBN(number) ? ethjsUnit.fromWei(number, unit) : ethjsUnit.fromWei(number, unit).toString(10);
+    return utils.isBN(number) ? vapjsUnit.fromWei(number, unit) : vapjsUnit.fromWei(number, unit).toString(10);
 };
 
 /**
@@ -204,21 +204,21 @@ var fromWei = function(number, unit) {
  *
  * Possible units are:
  *   SI Short   SI Full        Effigy       Other
- * - kwei       femtoether     babbage
- * - mwei       picoether      lovelace
- * - gwei       nanoether      shannon      nano
- * - --         microether     szabo        micro
- * - --         microether     szabo        micro
- * - --         milliether     finney       milli
- * - ether      --             --
- * - kether                    --           grand
- * - mether
- * - gether
- * - tether
+ * - kwei       femtovapor     babbage
+ * - mwei       picovapor      lovelace
+ * - gwei       nanovapor      shannon      nano
+ * - --         microvapor     szabo        micro
+ * - --         microvapor     szabo        micro
+ * - --         millivapor     finney       milli
+ * - vapor      --             --
+ * - kvapor                    --           grand
+ * - mvapor
+ * - gvapor
+ * - tvapor
  *
  * @method toWei
  * @param {Number|String|BN} number can be a number, number string or a HEX of a decimal
- * @param {String} unit the unit to convert from, default ether
+ * @param {String} unit the unit to convert from, default vapor
  * @return {String|Object} When given a BN object it returns one as well, otherwise a number
  */
 var toWei = function(number, unit) {
@@ -228,7 +228,7 @@ var toWei = function(number, unit) {
         throw new Error('Please pass numbers as strings or BigNumber objects to avoid precision errors.');
     }
 
-    return utils.isBN(number) ? ethjsUnit.toWei(number, unit) : ethjsUnit.toWei(number, unit).toString(10);
+    return utils.isBN(number) ? vapjsUnit.toWei(number, unit) : vapjsUnit.toWei(number, unit).toString(10);
 };
 
 
@@ -245,7 +245,7 @@ var toChecksumAddress = function (address) {
     if (typeof address === 'undefined') return '';
 
     if(!/^(0x)?[0-9a-f]{40}$/i.test(address))
-        throw new Error('Given address "'+ address +'" is not a valid Ethereum address.');
+        throw new Error('Given address "'+ address +'" is not a valid Vapory address.');
 
 
 
@@ -311,7 +311,7 @@ module.exports = {
     asciiToHex: asciiToHex,
     fromAscii: asciiToHex,
 
-    unitMap: ethjsUnit.unitMap,
+    unitMap: vapjsUnit.unitMap,
     toWei: toWei,
     fromWei: fromWei,
 

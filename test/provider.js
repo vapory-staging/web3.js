@@ -2,7 +2,7 @@ var chai = require('chai');
 var assert = chai.assert;
 var net = require('net');
 
-var Eth = require('../packages/web3-eth');
+var Vap = require('../packages/web3-vap');
 var Shh = require('../packages/web3-shh');
 var Net = require('../packages/web3-net');
 var Web3 = require('../packages/web3');
@@ -25,11 +25,11 @@ var tests = [{
     providerType: 'WebsocketProvider',
     package: Web3
 },{
-    providerParams: ['/.ethereum/my/path/geth.ipc', net],
+    providerParams: ['/.vapory/my/path/gvap.ipc', net],
     providerType: 'IpcProvider',
     package: Web3
 },{
-    providerParams: ['\\\\.\\pipe\\geth.ipc', net],
+    providerParams: ['\\\\.\\pipe\\gvap.ipc', net],
     providerType: 'IpcProvider',
     package: Web3
 },{
@@ -55,11 +55,11 @@ var tests = [{
         providerType: 'WebsocketProvider',
         package: Net
     },{
-        providerParams: ['/.ethereum/my/path/geth.ipc', net],
+        providerParams: ['/.vapory/my/path/gvap.ipc', net],
         providerType: 'IpcProvider',
         package: Net
     },{
-        providerParams: ['\\\\.\\pipe\\geth.ipc', net],
+        providerParams: ['\\\\.\\pipe\\gvap.ipc', net],
         providerType: 'IpcProvider',
         package: Net
     },{
@@ -85,11 +85,11 @@ var tests = [{
         providerType: 'WebsocketProvider',
         package: Shh
     },{
-        providerParams: ['/.ethereum/my/path/geth.ipc', net],
+        providerParams: ['/.vapory/my/path/gvap.ipc', net],
         providerType: 'IpcProvider',
         package: Shh
     },{
-        providerParams: ['\\\\.\\pipe\\geth.ipc', net],
+        providerParams: ['\\\\.\\pipe\\gvap.ipc', net],
         providerType: 'IpcProvider',
         package: Shh
     },{
@@ -101,30 +101,30 @@ var tests = [{
     {
         providerParams: ['http://localhost:8545'],
         providerType: 'HttpProvider',
-        package: Eth
+        package: Vap
     },{
         providerParams: ['HTTP://localhost:8545'],
         providerType: 'HttpProvider',
-        package: Eth
+        package: Vap
     },{
         providerParams: ['ws://localhost:8546'],
         providerType: 'WebsocketProvider',
-        package: Eth
+        package: Vap
     },{
         providerParams: ['WS://localhost:8546'],
         providerType: 'WebsocketProvider',
-        package: Eth
+        package: Vap
     },{
-        providerParams: ['/.ethereum/my/path/geth.ipc', net],
+        providerParams: ['/.vapory/my/path/gvap.ipc', net],
         providerType: 'IpcProvider',
-        package: Eth
+        package: Vap
     },{
-        providerParams: ['\\\\.\\pipe\\geth.ipc', net],
+        providerParams: ['\\\\.\\pipe\\gvap.ipc', net],
         providerType: 'IpcProvider',
-        package: Eth
+        package: Vap
     },{
         providerParams: ['://hello.com:1234'],
-        package: Eth,
+        package: Vap,
         error: true
     }];
 

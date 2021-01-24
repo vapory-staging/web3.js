@@ -19,12 +19,12 @@
 
 /**
  * @file bloom.js
- * @author Bas van Kervel <bas@ethereum.org>
+ * @author Bas van Kervel <bas@vapory.org>
  * @date 2017
  */
 
 /**
- * Ethereum bloom filter support.
+ * Vapory bloom filter support.
  *
  * TODO UNDOCUMENTED
  *

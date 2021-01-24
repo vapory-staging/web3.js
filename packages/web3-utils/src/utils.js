@@ -16,7 +16,7 @@
  */
 /**
  * @file utils.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
@@ -24,7 +24,7 @@ var _ = require('underscore');
 var BN = require('bn.js');
 var numberToBN = require('number-to-bn');
 var utf8 = require('utf8');
-var Hash = require("eth-lib/lib/hash");
+var Hash = require("vap-lib/lib/hash");
 
 
 /**
@@ -378,7 +378,7 @@ var isHex = function (hex) {
 
 
 /**
- * Returns true if given string is a valid Ethereum block header bloom.
+ * Returns true if given string is a valid Vapory block header bloom.
  *
  * TODO UNDOCUMENTED
  *

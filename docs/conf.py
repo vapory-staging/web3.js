@@ -49,7 +49,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'web3.js'
-copyright = u'2016, Ethereum'
+copyright = u'2016, Vapory'
 author = u'Fabian Vogelsteller, Marek Kotewicz, Jeffrey Wilcke, Marian Oancea, Gav Wood'
 
 # The version info for the project you're documenting, acts as replacement for

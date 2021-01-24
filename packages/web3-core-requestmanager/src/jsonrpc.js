@@ -16,7 +16,7 @@
 */
 /** @file jsonrpc.js
  * @authors:
- *   Fabian Vogelsteller <fabian@ethereum.org>
+ *   Fabian Vogelsteller <fabian@vapory.org>
  *   Marek Kotewicz <marek@ethdev.com>
  *   Aaron Kumavis <aaron@kumavis.me>
  * @date 2015

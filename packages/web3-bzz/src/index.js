@@ -16,7 +16,7 @@
 */
 /**
  * @file index.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
@@ -42,16 +42,16 @@ var Bzz = function Bzz(provider) {
     this.setProvider(provider);
 };
 
-// set default ethereum provider
+// set default vapory provider
 /* jshint ignore:start */
 Bzz.givenProvider = null;
-if(typeof ethereumProvider !== 'undefined' && ethereumProvider.bzz) {
-    Bzz.givenProvider = ethereumProvider.bzz;
+if(typeof vaporyProvider !== 'undefined' && vaporyProvider.bzz) {
+    Bzz.givenProvider = vaporyProvider.bzz;
 }
 /* jshint ignore:end */
 
 Bzz.prototype.setProvider = function(provider) {
-    // is ethereum provider
+    // is vapory provider
     if(_.isObject(provider) && _.isString(provider.bzz)) {
         provider = provider.bzz;
     // is no string, set default

@@ -6,14 +6,14 @@ setProvider
 .. code-block:: javascript
 
     web3.setProvider(myProvider)
-    web3.eth.setProvider(myProvider)
+    web3.vap.setProvider(myProvider)
     web3.shh.setProvider(myProvider)
     web3.bzz.setProvider(myProvider)
     ...
 
 Will change the provider for its module.
 
-.. note:: When called on the umbrella package ``web3`` it will also set the provider for all sub modules ``web3.eth``, ``web3.shh``, etc EXCEPT ``web3.bzz`` which needs a separate provider at all times.
+.. note:: When called on the umbrella package ``web3`` it will also set the provider for all sub modules ``web3.vap``, ``web3.shh``, etc EXCEPT ``web3.bzz`` which needs a separate provider at all times.
 
 ----------
 Parameters
@@ -33,7 +33,7 @@ Example
 
 .. code-block:: javascript
 
-    var Web3 = require('web3');
+    var Web3 = require('@vapory/web3');
     var web3 = new Web3('http://localhost:8545');
     // or
     var web3 = new Web3(new Web3.providers.HttpProvider('http://localhost:8545'));
@@ -45,11 +45,11 @@ Example
 
     // Using the IPC provider in node.js
     var net = require('net');
-    var web3 = new Web3('/Users/myuser/Library/Ethereum/geth.ipc', net); // mac os path
+    var web3 = new Web3('/Users/myuser/Library/Vapory/gvap.ipc', net); // mac os path
     // or
-    var web3 = new Web3(new Web3.providers.IpcProvider('/Users/myuser/Library/Ethereum/geth.ipc', net)); // mac os path
-    // on windows the path is: "\\\\.\\pipe\\geth.ipc"
-    // on linux the path is: "/users/myuser/.ethereum/geth.ipc"
+    var web3 = new Web3(new Web3.providers.IpcProvider('/Users/myuser/Library/Vapory/gvap.ipc', net)); // mac os path
+    // on windows the path is: "\\\\.\\pipe\\gvap.ipc"
+    // on linux the path is: "/users/myuser/.vapory/gvap.ipc"
 
 
 ------------------------------------------------------------------------------
@@ -60,7 +60,7 @@ providers
 .. code-block:: javascript
 
     web3.providers
-    web3.eth.providers
+    web3.vap.providers
     web3.shh.providers
     web3.bzz.providers
     ...
@@ -83,7 +83,7 @@ Example
 
 .. code-block:: javascript
 
-    var Web3 = require('web3');
+    var Web3 = require('@vapory/web3');
     // use the given Provider, e.g in Mist, or instantiate a new websocket provider
     var web3 = new Web3(Web3.givenProvider || 'ws://remotenode.com:8546');
     // or
@@ -92,11 +92,11 @@ Example
     // Using the IPC provider in node.js
     var net = require('net');
 
-    var web3 = new Web3('/Users/myuser/Library/Ethereum/geth.ipc', net); // mac os path
+    var web3 = new Web3('/Users/myuser/Library/Vapory/gvap.ipc', net); // mac os path
     // or
-    var web3 = new Web3(new Web3.providers.IpcProvider('/Users/myuser/Library/Ethereum/geth.ipc', net)); // mac os path
-    // on windows the path is: "\\\\.\\pipe\\geth.ipc"
-    // on linux the path is: "/users/myuser/.ethereum/geth.ipc"
+    var web3 = new Web3(new Web3.providers.IpcProvider('/Users/myuser/Library/Vapory/gvap.ipc', net)); // mac os path
+    // on windows the path is: "\\\\.\\pipe\\gvap.ipc"
+    // on linux the path is: "/users/myuser/.vapory/gvap.ipc"
 
 
 ------------------------------------------------------------------------------
@@ -107,12 +107,12 @@ givenProvider
 .. code-block:: javascript
 
     web3.givenProvider
-    web3.eth.givenProvider
+    web3.vap.givenProvider
     web3.shh.givenProvider
     web3.bzz.givenProvider
     ...
 
-When using web3.js in an Ethereum compatible browser, it will set with the current native provider by that browser.
+When using web3.js in an Vapory compatible browser, it will set with the current native provider by that browser.
 Will return the given provider by the (browser) environment, otherwise ``null``.
 
 
@@ -138,7 +138,7 @@ currentProvider
 .. code-block:: javascript
 
     web3.currentProvider
-    web3.eth.currentProvider
+    web3.vap.currentProvider
     web3.shh.currentProvider
     web3.bzz.currentProvider
     ...
@@ -169,7 +169,7 @@ BatchRequest
 .. code-block:: javascript
 
     new web3.BatchRequest()
-    new web3.eth.BatchRequest()
+    new web3.vap.BatchRequest()
     new web3.shh.BatchRequest()
     new web3.bzz.BatchRequest()
 
@@ -196,10 +196,10 @@ Example
 
 .. code-block:: javascript
 
-    var contract = new web3.eth.Contract(abi, address);
+    var contract = new web3.vap.Contract(abi, address);
 
     var batch = new web3.BatchRequest();
-    batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
+    batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
     batch.add(contract.methods.balance(address).call.request({from: '0x0000000000000000000000000000000000000000'}, callback2));
     batch.execute();
 
@@ -212,14 +212,14 @@ extend
 .. code-block:: javascript
 
     web3.extend(methods)
-    web3.eth.extend(methods)
+    web3.vap.extend(methods)
     web3.shh.extend(methods)
     web3.bzz.extend(methods)
     ...
 
 Allows extending the web3 modules.
 
-.. note:: You also have ``*.extend.formatters`` as additional formatter functions to be used for in and output formatting. Please see the `source file <https://github.com/ethereum/web3.js/blob/master/packages/web3-core-helpers/src/formatters.js>`_ for function details.
+.. note:: You also have ``*.extend.formatters`` as additional formatter functions to be used for in and output formatting. Please see the `source file <https://github.com/vaporyco/web3.js/blob/master/packages/web3-core-helpers/src/formatters.js>`_ for function details.
 
 ----------
 Parameters
@@ -251,13 +251,13 @@ Example
         property: 'myModule',
         methods: [{
             name: 'getBalance',
-            call: 'eth_getBalance',
+            call: 'vap_getBalance',
             params: 2,
             inputFormatter: [web3.extend.formatters.inputAddressFormatter, web3.extend.formatters.inputDefaultBlockNumberFormatter],
             outputFormatter: web3.utils.hexToNumberString
         },{
             name: 'getGasPriceSuperFunction',
-            call: 'eth_gasPriceSuper',
+            call: 'vap_gasPriceSuper',
             params: 2,
             inputFormatter: [null, web3.utils.numberToHex]
         }]
@@ -266,7 +266,7 @@ Example
     web3.extend({
         methods: [{
             name: 'directCall',
-            call: 'eth_callForFun',
+            call: 'vap_callForFun',
         }]
     });
 
@@ -277,7 +277,7 @@ Example
             getGasPriceSuperFunction: function(){}
         },
         directCall: function(){},
-        eth: Eth {...},
+        vap: Vap {...},
         bzz: Bzz {...},
         ...
     }

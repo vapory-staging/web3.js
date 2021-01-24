@@ -30,29 +30,29 @@ var packages = [{
     expose: 'Web3Utils',
     src: './packages/web3-utils/src/index.js'
 }, {
-    fileName: 'web3-eth',
-    expose: 'Web3Eth',
-    src: './packages/web3-eth/src/index.js'
+    fileName: 'web3-vap',
+    expose: 'Web3Vap',
+    src: './packages/web3-vap/src/index.js'
 }, {
-    fileName: 'web3-eth-accounts',
-    expose: 'Web3EthAccounts',
-    src: './packages/web3-eth-accounts/src/index.js'
+    fileName: 'web3-vap-accounts',
+    expose: 'Web3VapAccounts',
+    src: './packages/web3-vap-accounts/src/index.js'
 }, {
-    fileName: 'web3-eth-contract',
-    expose: 'Web3EthContract',
-    src: './packages/web3-eth-contract/src/index.js'
+    fileName: 'web3-vap-contract',
+    expose: 'Web3VapContract',
+    src: './packages/web3-vap-contract/src/index.js'
 }, {
-    fileName: 'web3-eth-personal',
-    expose: 'Web3EthPersonal',
-    src: './packages/web3-eth-personal/src/index.js'
+    fileName: 'web3-vap-personal',
+    expose: 'Web3VapPersonal',
+    src: './packages/web3-vap-personal/src/index.js'
 }, {
-    fileName: 'web3-eth-iban',
-    expose: 'Web3EthIban',
-    src: './packages/web3-eth-iban/src/index.js'
+    fileName: 'web3-vap-iban',
+    expose: 'Web3VapIban',
+    src: './packages/web3-vap-iban/src/index.js'
 }, {
-    fileName: 'web3-eth-abi',
-    expose: 'Web3EthAbi',
-    src: './packages/web3-eth-abi/src/index.js'
+    fileName: 'web3-vap-abi',
+    expose: 'Web3VapAbi',
+    src: './packages/web3-vap-abi/src/index.js'
 }, {
     fileName: 'web3-net',
     expose: 'Web3Net',

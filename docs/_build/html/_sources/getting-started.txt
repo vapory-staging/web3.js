@@ -5,9 +5,9 @@
 Getting Started
 ===============
 
-The web3.js library is a collection of modules which contain specific functionality for the ethereum ecosystem.
+The web3.js library is a collection of modules which contain specific functionality for the vapory ecosystem.
 
-- The ``web3-eth`` is for the ethereum blockchain and smart contracts
+- The ``web3-vap`` is for the vapory blockchain and smart contracts
 - The ``web3-shh`` is for the whisper protocol to communicate p2p and broadcast
 - The ``web3-bzz`` is for the swarm protocol, the decentralized file storage
 - The ``web3-utils`` contains useful helper functions for Dapp developers.
@@ -25,16 +25,16 @@ Adding web3.js
 First you need to get web3.js into your project. This can be done using the following methods:
 
 - npm: ``npm install web3``
-- meteor: ``meteor add ethereum:web3``
+- meteor: ``meteor add vapory:web3``
 - pure js: link the ``dist/web3.min.js``
 
 After that you need to create a web3 instance and set a provider.
-Ethereum supported Browsers like Mist or MetaMask will have a ``ethereumProvider`` or ``web3.currentProvider`` available, web3.js is setting this one to ``Web3.givenProvider``.
+Vapory supported Browsers like Mist or MetaMask will have a ``vaporyProvider`` or ``web3.currentProvider`` available, web3.js is setting this one to ``Web3.givenProvider``.
 If this property is ``null`` you need to connect to a remote/local node.
 
 .. code-block:: javascript
 
-    // in node.js use: var Web3 = require('web3');
+    // in node.js use: var Web3 = require('@vapory/web3');
 
     var web3 = new Web3(Web3.givenProvider || "ws://localhost:8546");
 

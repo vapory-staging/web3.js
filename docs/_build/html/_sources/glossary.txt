@@ -14,9 +14,9 @@ Glossary
 json interface
 =====================
 
-The json interface is a json object describing the `Application Binary Interface (ABI) <https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI>`_ for an Ethereum smart contract.
+The json interface is a json object describing the `Application Binary Interface (ABI) <https://github.com/vaporyco/wiki/wiki/Vapory-Contract-ABI>`_ for an Vapory smart contract.
 
-Using this json interface web3.js is able to create JavaScript object representing the smart contract and its methods and events using the :ref:`web3.eth.Contract object <eth-contract>`.
+Using this json interface web3.js is able to create JavaScript object representing the smart contract and its methods and events using the :ref:`web3.vap.Contract object <vap-contract>`.
 
 -------
 Specification
@@ -27,7 +27,7 @@ Functions:
 - ``type``: ``"function"``, ``"constructor"`` (can be omitted, defaulting to ``"function"``; ``"fallback"`` also possible but not relevant in web3.js);
 - ``name``: the name of the function (only present for function types);
 - ``constant``: ``true`` if function is specified to not modify the blockchain state;
-- ``payable``: ``true`` if function accepts ether, defaults to ``false``;
+- ``payable``: ``true`` if function accepts vapor, defaults to ``false``;
 - ``stateMutability``: a string with one of the following values: ``pure`` (specified to not read blockchain state), ``view`` (same as ``constant`` above), ``nonpayable`` and ``payable`` (same as ``payable`` above);
 - ``inputs``: an array of objects, each of which contains:
 

@@ -29,13 +29,13 @@ This will expose the `Web3Personal` object on the window object.
 
 ```js
 // in node.js
-var Web3Bzz = require('web3-bzz');
+var Web3Bzz = require('@vapory/web3-bzz');
 
 var bzz = new Web3Bzz('http://swarm-gateways.net');
 ```
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

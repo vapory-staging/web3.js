@@ -16,7 +16,7 @@
 */
 /**
  * @file errors.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @author Marek Kotewicz <marek@parity.io>
  * @date 2017
  */

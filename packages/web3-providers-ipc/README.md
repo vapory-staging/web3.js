@@ -29,14 +29,14 @@ This will expose the `Web3IpcProvider` object on the window object.
 
 ```js
 // in node.js
-var Web3IpcProvider = require('web3-providers-ipc');
+var Web3IpcProvider = require('@vapory/web3-providers-ipc');
 var net = require(net);
 
-var ipc = new Web3IpcProvider('/Users/me/Library/Ethereum/geth.ipc', net);
+var ipc = new Web3IpcProvider('/Users/me/Library/Vapory/gvap.ipc', net);
 ```
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

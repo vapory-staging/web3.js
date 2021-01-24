@@ -1,9 +1,9 @@
 {
-    "name": "web3-bzz",
-    "namespace": "ethereum",
+    "name": "@vapory/web3-bzz",
+    "namespace": "vapory",
     "version": "1.0.0-beta.30",
     "description": "Web3 module to interact with the Swarm network.",
-    "repository": "https://github.com/ethereum/web3.js/tree/master/packages/web3-bzz",
+    "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3-bzz",
     "license": "LGPL-3.0",
     "main": "src/index.js",
     "dependencies": {

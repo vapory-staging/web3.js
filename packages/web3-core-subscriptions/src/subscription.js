@@ -16,14 +16,14 @@
 */
 /**
  * @file subscription.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
 "use strict";
 
 var _ = require('underscore');
-var errors = require('web3-core-helpers').errors;
+var errors = require('@vapory/web3-core-helpers').errors;
 var EventEmitter = require('eventemitter3');
 
 
@@ -222,7 +222,7 @@ Subscription.prototype.subscribe = function() {
     if(payload.params[0] === 'logs' && _.isObject(payload.params[1]) && payload.params[1].hasOwnProperty('fromBlock') && isFinite(payload.params[1].fromBlock)) {
         // send the subscription request
         this.options.requestManager.send({
-            method: 'eth_getLogs',
+            method: 'vap_getLogs',
             params: [payload.params[1]]
         }, function (err, logs) {
             if(!err) {
@@ -254,7 +254,7 @@ Subscription.prototype.subscribe = function() {
             // call callback on notifications
             _this.options.requestManager.addSubscription(_this.id, payload.params[0] , _this.options.type, function(err, result) {
 
-                // TODO remove once its fixed in geth
+                // TODO remove once its fixed in gvap
                 if(_.isArray(result))
                     result = result[0];
 

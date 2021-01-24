@@ -6,7 +6,7 @@
 web3.utils
 ========
 
-This package provides utility functions for Ethereum dapps and other web3.js packages.
+This package provides utility functions for Vapory dapps and other web3.js packages.
 
 ------------------------------------------------------------------------------
 
@@ -440,7 +440,7 @@ isAddress
 
     web3.utils.isAddress(address)
 
-Checks if a given string is a valid Ethereum address.
+Checks if a given string is a valid Vapory address.
 It will also check the checksum, if the address has upper and lowercase letters.
 
 ----------
@@ -486,7 +486,7 @@ toChecksumAddress
 
     web3.utils.toChecksumAddress(address)
 
-Will convert an upper or lowercase Ethereum address to a checksum address.
+Will convert an upper or lowercase Vapory address to a checksum address.
 
 ----------
 Parameters
@@ -969,43 +969,43 @@ toWei
     web3.utils.toWei(number [, unit])
 
 
-Converts any `ether value <http://ethdocs.org/en/latest/ether.html>`_ value into `wei <http://ethereum.stackexchange.com/questions/253/the-ether-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na>`_.
+Converts any `vapor value <http://ethdocs.org/en/latest/vapor.html>`_ value into `wei <http://vapory.stackexchange.com/questions/253/the-vapor-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na>`_.
 
-.. note:: "wei" are the smallest ethere unit, and you should always make calculations in wei and convert only for display reasons.
+.. note:: "wei" are the smallest vapore unit, and you should always make calculations in wei and convert only for display reasons.
 
 ----------
 Parameters
 ----------
 
 1. ``number`` - ``String|Number|BN``: The value.
-1. ``unit`` - ``String`` (optional, defaults to ``"ether"``): The ether to convert from. Possible units are:
-    - ``noether``: '0'
+1. ``unit`` - ``String`` (optional, defaults to ``"vapor"``): The vapor to convert from. Possible units are:
+    - ``novapor``: '0'
     - ``wei``: '1'
     - ``kwei``: '1000'
     - ``Kwei``: '1000'
     - ``babbage``: '1000'
-    - ``femtoether``: '1000'
+    - ``femtovapor``: '1000'
     - ``mwei``: '1000000'
     - ``Mwei``: '1000000'
     - ``lovelace``: '1000000'
-    - ``picoether``: '1000000'
+    - ``picovapor``: '1000000'
     - ``gwei``: '1000000000'
     - ``Gwei``: '1000000000'
     - ``shannon``: '1000000000'
-    - ``nanoether``: '1000000000'
+    - ``nanovapor``: '1000000000'
     - ``nano``: '1000000000'
     - ``szabo``: '1000000000000'
-    - ``microether``: '1000000000000'
+    - ``microvapor``: '1000000000000'
     - ``micro``: '1000000000000'
     - ``finney``: '1000000000000000'
-    - ``milliether``: '1000000000000000'
+    - ``millivapor``: '1000000000000000'
     - ``milli``: '1000000000000000'
-    - ``ether``: '1000000000000000000'
-    - ``kether``: '1000000000000000000000'
+    - ``vapor``: '1000000000000000000'
+    - ``kvapor``: '1000000000000000000000'
     - ``grand``: '1000000000000000000000'
-    - ``mether``: '1000000000000000000000000'
-    - ``gether``: '1000000000000000000000000000'
-    - ``tether``: '1000000000000000000000000000000'
+    - ``mvapor``: '1000000000000000000000000'
+    - ``gvapor``: '1000000000000000000000000000'
+    - ``tvapor``: '1000000000000000000000000000000'
 
 -------
 Returns
@@ -1019,7 +1019,7 @@ Example
 
 .. code-block:: javascript
 
-    web3.utils.toWei('1', 'ether');
+    web3.utils.toWei('1', 'vapor');
     > "1000000000000000000"
 
     web3.utils.toWei('1', 'finney');
@@ -1043,43 +1043,43 @@ fromWei
     web3.utils.fromWei(number [, unit])
 
 
-Converts any `wei <http://ethereum.stackexchange.com/questions/253/the-ether-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na>`_ value into a `ether value <http://ethdocs.org/en/latest/ether.html>`_.
+Converts any `wei <http://vapory.stackexchange.com/questions/253/the-vapor-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na>`_ value into a `vapor value <http://ethdocs.org/en/latest/vapor.html>`_.
 
-.. note:: "wei" are the smallest ethere unit, and you should always make calculations in wei and convert only for display reasons.
+.. note:: "wei" are the smallest vapore unit, and you should always make calculations in wei and convert only for display reasons.
 
 ----------
 Parameters
 ----------
 
 1. ``number`` - ``String|Number|BN``: The value in wei.
-1. ``unit`` - ``String`` (optional, defaults to ``"ether"``): The ether to convert to. Possible units are:
-    - ``noether``: '0'
+1. ``unit`` - ``String`` (optional, defaults to ``"vapor"``): The vapor to convert to. Possible units are:
+    - ``novapor``: '0'
     - ``wei``: '1'
     - ``kwei``: '1000'
     - ``Kwei``: '1000'
     - ``babbage``: '1000'
-    - ``femtoether``: '1000'
+    - ``femtovapor``: '1000'
     - ``mwei``: '1000000'
     - ``Mwei``: '1000000'
     - ``lovelace``: '1000000'
-    - ``picoether``: '1000000'
+    - ``picovapor``: '1000000'
     - ``gwei``: '1000000000'
     - ``Gwei``: '1000000000'
     - ``shannon``: '1000000000'
-    - ``nanoether``: '1000000000'
+    - ``nanovapor``: '1000000000'
     - ``nano``: '1000000000'
     - ``szabo``: '1000000000000'
-    - ``microether``: '1000000000000'
+    - ``microvapor``: '1000000000000'
     - ``micro``: '1000000000000'
     - ``finney``: '1000000000000000'
-    - ``milliether``: '1000000000000000'
+    - ``millivapor``: '1000000000000000'
     - ``milli``: '1000000000000000'
-    - ``ether``: '1000000000000000000'
-    - ``kether``: '1000000000000000000000'
+    - ``vapor``: '1000000000000000000'
+    - ``kvapor``: '1000000000000000000000'
     - ``grand``: '1000000000000000000000'
-    - ``mether``: '1000000000000000000000000'
-    - ``gether``: '1000000000000000000000000000'
-    - ``tether``: '1000000000000000000000000000000'
+    - ``mvapor``: '1000000000000000000000000'
+    - ``gvapor``: '1000000000000000000000000000'
+    - ``tvapor``: '1000000000000000000000000000000'
 
 -------
 Returns
@@ -1093,7 +1093,7 @@ Example
 
 .. code-block:: javascript
 
-    web3.utils.fromWei('1', 'ether');
+    web3.utils.fromWei('1', 'vapor');
     > "0.000000000000000001"
 
     web3.utils.fromWei('1', 'finney');
@@ -1115,40 +1115,40 @@ unitMap
     web3.utils.unitMap
 
 
-Shows all possible `ether value <http://ethdocs.org/en/latest/ether.html>`_ and their amount in `wei <http://ethereum.stackexchange.com/questions/253/the-ether-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na>`_.
+Shows all possible `vapor value <http://ethdocs.org/en/latest/vapor.html>`_ and their amount in `wei <http://vapory.stackexchange.com/questions/253/the-vapor-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na>`_.
 
 ----------
 Retrun value
 ----------
 
 - ``Object`` with the following properties:
-    - ``noether``: '0'
+    - ``novapor``: '0'
     - ``wei``: '1'
     - ``kwei``: '1000'
     - ``Kwei``: '1000'
     - ``babbage``: '1000'
-    - ``femtoether``: '1000'
+    - ``femtovapor``: '1000'
     - ``mwei``: '1000000'
     - ``Mwei``: '1000000'
     - ``lovelace``: '1000000'
-    - ``picoether``: '1000000'
+    - ``picovapor``: '1000000'
     - ``gwei``: '1000000000'
     - ``Gwei``: '1000000000'
     - ``shannon``: '1000000000'
-    - ``nanoether``: '1000000000'
+    - ``nanovapor``: '1000000000'
     - ``nano``: '1000000000'
     - ``szabo``: '1000000000000'
-    - ``microether``: '1000000000000'
+    - ``microvapor``: '1000000000000'
     - ``micro``: '1000000000000'
     - ``finney``: '1000000000000000'
-    - ``milliether``: '1000000000000000'
+    - ``millivapor``: '1000000000000000'
     - ``milli``: '1000000000000000'
-    - ``ether``: '1000000000000000000'
-    - ``kether``: '1000000000000000000000'
+    - ``vapor``: '1000000000000000000'
+    - ``kvapor``: '1000000000000000000000'
     - ``grand``: '1000000000000000000000'
-    - ``mether``: '1000000000000000000000000'
-    - ``gether``: '1000000000000000000000000000'
-    - ``tether``: '1000000000000000000000000000000'
+    - ``mvapor``: '1000000000000000000000000'
+    - ``gvapor``: '1000000000000000000000000000'
+    - ``tvapor``: '1000000000000000000000000000000'
 
 
 -------
@@ -1159,33 +1159,33 @@ Example
 
     web3.utils.unitMap
     > {
-        noether: '0',
+        novapor: '0',
         wei:        '1',
         kwei:       '1000',
         Kwei:       '1000',
         babbage:    '1000',
-        femtoether: '1000',
+        femtovapor: '1000',
         mwei:       '1000000',
         Mwei:       '1000000',
         lovelace:   '1000000',
-        picoether:  '1000000',
+        picovapor:  '1000000',
         gwei:       '1000000000',
         Gwei:       '1000000000',
         shannon:    '1000000000',
-        nanoether:  '1000000000',
+        nanovapor:  '1000000000',
         nano:       '1000000000',
         szabo:      '1000000000000',
-        microether: '1000000000000',
+        microvapor: '1000000000000',
         micro:      '1000000000000',
         finney:     '1000000000000000',
-        milliether: '1000000000000000',
+        millivapor: '1000000000000000',
         milli:      '1000000000000000',
-        ether:      '1000000000000000000',
-        kether:     '1000000000000000000000',
+        vapor:      '1000000000000000000',
+        kvapor:     '1000000000000000000000',
         grand:      '1000000000000000000000',
-        mether:     '1000000000000000000000000',
-        gether:     '1000000000000000000000000000',
-        tether:     '1000000000000000000000000000000'
+        mvapor:     '1000000000000000000000000',
+        gvapor:     '1000000000000000000000000000',
+        tvapor:     '1000000000000000000000000000000'
     }
 
 ------------------------------------------------------------------------------

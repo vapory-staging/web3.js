@@ -9,4 +9,4 @@ var tests = [{
     call: 'personal_listAccounts'
 }];
 
-testMethod.runTests(['eth','personal'], method, tests);
+testMethod.runTests(['vap','personal'], method, tests);

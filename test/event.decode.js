@@ -1,6 +1,6 @@
 var chai = require('chai');
 var assert = chai.assert;
-var Eth = require('../packages/web3-eth/');
+var Vap = require('../packages/web3-vap/');
 
 
 var name = 'event1';
@@ -215,8 +215,8 @@ describe('lib/web3/event', function () {
     describe('decode', function () {
         tests.forEach(function (test, index) {
             it('test no: ' + index, function () {
-                var eth = new Eth();
-                var contract = new eth.Contract([test.abi], address);
+                var vap = new Vap();
+                var contract = new vap.Contract([test.abi], address);
 
                 var result = contract._decodeEventABI.call(test.abi, test.data);
                 assert.deepEqual(result, test.expected);

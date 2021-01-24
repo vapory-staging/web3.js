@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <title>setProvider &#8212; web3.js 1.0.0 documentation</title>
-    
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -25,7 +25,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" /> 
+    <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -34,19 +34,19 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="section" id="setprovider">
 <h1>setProvider<a class="headerlink" href="#setprovider" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
-<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">bzz</span><span class="p">.</span><span class="nx">setProvider</span><span class="p">(</span><span class="nx">myProvider</span><span class="p">)</span>
 <span class="p">...</span>
@@ -55,7 +55,7 @@
 <p>Will change the provider for its module.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">When called on the umbrella package <code class="docutils literal"><span class="pre">web3</span></code> it will also set the provider for all sub modules <code class="docutils literal"><span class="pre">web3.eth</span></code>, <code class="docutils literal"><span class="pre">web3.shh</span></code>, etc EXCEPT <code class="docutils literal"><span class="pre">web3.bzz</span></code> which needs a separate provider at all times.</p>
+<p class="last">When called on the umbrella package <code class="docutils literal"><span class="pre">web3</span></code> it will also set the provider for all sub modules <code class="docutils literal"><span class="pre">web3.vap</span></code>, <code class="docutils literal"><span class="pre">web3.shh</span></code>, etc EXCEPT <code class="docutils literal"><span class="pre">web3.bzz</span></code> which needs a separate provider at all times.</p>
 </div>
 <div class="section" id="parameters">
 <h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
@@ -81,11 +81,11 @@
 
 <span class="c1">// Using the IPC provider in node.js</span>
 <span class="kd">var</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;net&#39;</span><span class="p">);</span>
-<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Ethereum/geth.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">);</span> <span class="c1">// mac os path</span>
+<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Vapory/gvap.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">);</span> <span class="c1">// mac os path</span>
 <span class="c1">// or</span>
-<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">IpcProvider</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Ethereum/geth.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">));</span> <span class="c1">// mac os path</span>
-<span class="c1">// on windows the path is: &quot;\\\\.\\pipe\\geth.ipc&quot;</span>
-<span class="c1">// on linux the path is: &quot;/users/myuser/.ethereum/geth.ipc&quot;</span>
+<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">IpcProvider</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Vapory/gvap.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">));</span> <span class="c1">// mac os path</span>
+<span class="c1">// on windows the path is: &quot;\\\\.\\pipe\\gvap.ipc&quot;</span>
+<span class="c1">// on linux the path is: &quot;/users/myuser/.vapory/gvap.ipc&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -94,7 +94,7 @@
 <div class="section" id="providers">
 <h1>providers<a class="headerlink" href="#providers" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">providers</span>
-<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">providers</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">providers</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">providers</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">bzz</span><span class="p">.</span><span class="nx">providers</span>
 <span class="p">...</span>
@@ -123,11 +123,11 @@
 <span class="c1">// Using the IPC provider in node.js</span>
 <span class="kd">var</span> <span class="nx">net</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;net&#39;</span><span class="p">);</span>
 
-<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Ethereum/geth.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">);</span> <span class="c1">// mac os path</span>
+<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Vapory/gvap.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">);</span> <span class="c1">// mac os path</span>
 <span class="c1">// or</span>
-<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">IpcProvider</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Ethereum/geth.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">));</span> <span class="c1">// mac os path</span>
-<span class="c1">// on windows the path is: &quot;\\\\.\\pipe\\geth.ipc&quot;</span>
-<span class="c1">// on linux the path is: &quot;/users/myuser/.ethereum/geth.ipc&quot;</span>
+<span class="kd">var</span> <span class="nx">web3</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Web3</span><span class="p">(</span><span class="k">new</span> <span class="nx">Web3</span><span class="p">.</span><span class="nx">providers</span><span class="p">.</span><span class="nx">IpcProvider</span><span class="p">(</span><span class="s1">&#39;/Users/myuser/Library/Vapory/gvap.ipc&#39;</span><span class="p">,</span> <span class="nx">net</span><span class="p">));</span> <span class="c1">// mac os path</span>
+<span class="c1">// on windows the path is: &quot;\\\\.\\pipe\\gvap.ipc&quot;</span>
+<span class="c1">// on linux the path is: &quot;/users/myuser/.vapory/gvap.ipc&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -136,13 +136,13 @@
 <div class="section" id="givenprovider">
 <h1>givenProvider<a class="headerlink" href="#givenprovider" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">givenProvider</span>
-<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">givenProvider</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">givenProvider</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">givenProvider</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">bzz</span><span class="p">.</span><span class="nx">givenProvider</span>
 <span class="p">...</span>
 </pre></div>
 </div>
-<p>When using web3.js in an Ethereum compatible browser, it will set with the current native provider by that browser.
+<p>When using web3.js in an Vapory compatible browser, it will set with the current native provider by that browser.
 Will return the given provider by the (browser) environment, otherwise <code class="docutils literal"><span class="pre">null</span></code>.</p>
 <div class="section" id="id2">
 <h2>Returns<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -156,7 +156,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 <div class="section" id="currentprovider">
 <h1>currentProvider<a class="headerlink" href="#currentprovider" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">currentProvider</span>
-<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">currentProvider</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">currentProvider</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">currentProvider</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">bzz</span><span class="p">.</span><span class="nx">currentProvider</span>
 <span class="p">...</span>
@@ -175,7 +175,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 <div class="section" id="batchrequest">
 <h1>BatchRequest<a class="headerlink" href="#batchrequest" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
-<span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
+<span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
 <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
 <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">bzz</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">()</span>
 </pre></div>
@@ -197,10 +197,10 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 </div>
 <div class="section" id="id8">
 <h2>Example<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">contract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">abi</span><span class="p">,</span> <span class="nx">address</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="kd">var</span> <span class="nx">contract</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">Contract</span><span class="p">(</span><span class="nx">abi</span><span class="p">,</span> <span class="nx">address</span><span class="p">);</span>
 
 <span class="kd">var</span> <span class="nx">batch</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">BatchRequest</span><span class="p">();</span>
-<span class="nx">batch</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;0x0000000000000000000000000000000000000000&#39;</span><span class="p">,</span> <span class="s1">&#39;latest&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">));</span>
+<span class="nx">batch</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">getBalance</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s1">&#39;0x0000000000000000000000000000000000000000&#39;</span><span class="p">,</span> <span class="s1">&#39;latest&#39;</span><span class="p">,</span> <span class="nx">callback</span><span class="p">));</span>
 <span class="nx">batch</span><span class="p">.</span><span class="nx">add</span><span class="p">(</span><span class="nx">contract</span><span class="p">.</span><span class="nx">methods</span><span class="p">.</span><span class="nx">balance</span><span class="p">(</span><span class="nx">address</span><span class="p">).</span><span class="nx">call</span><span class="p">.</span><span class="nx">request</span><span class="p">({</span><span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;0x0000000000000000000000000000000000000000&#39;</span><span class="p">},</span> <span class="nx">callback2</span><span class="p">));</span>
 <span class="nx">batch</span><span class="p">.</span><span class="nx">execute</span><span class="p">();</span>
 </pre></div>
@@ -211,7 +211,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 <div class="section" id="extend">
 <h1>extend<a class="headerlink" href="#extend" title="Permalink to this headline">¶</a></h1>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">methods</span><span class="p">)</span>
-<span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">methods</span><span class="p">)</span>
+<span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">methods</span><span class="p">)</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">shh</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">methods</span><span class="p">)</span>
 <span class="nx">web3</span><span class="p">.</span><span class="nx">bzz</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span><span class="nx">methods</span><span class="p">)</span>
 <span class="p">...</span>
@@ -220,7 +220,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 <p>Allows extending the web3 modules.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You also have <code class="docutils literal"><span class="pre">*.extend.formatters</span></code> as additional formatter functions to be used for in and output formatting. Please see the <a class="reference external" href="https://github.com/ethereum/web3.js/blob/master/packages/web3-core-helpers/src/formatters.js">source file</a> for function details.</p>
+<p class="last">You also have <code class="docutils literal"><span class="pre">*.extend.formatters</span></code> as additional formatter functions to be used for in and output formatting. Please see the <a class="reference external" href="https://github.com/vapory/web3.js/blob/master/packages/web3-core-helpers/src/formatters.js">source file</a> for function details.</p>
 </div>
 <div class="section" id="id9">
 <h2>Parameters<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
@@ -258,13 +258,13 @@ Will return the given provider by the (browser) environment, otherwise <code cla
     <span class="nx">property</span><span class="o">:</span> <span class="s1">&#39;myModule&#39;</span><span class="p">,</span>
     <span class="nx">methods</span><span class="o">:</span> <span class="p">[{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;getBalance&#39;</span><span class="p">,</span>
-        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;eth_getBalance&#39;</span><span class="p">,</span>
+        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;vap_getBalance&#39;</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="nx">inputFormatter</span><span class="o">:</span> <span class="p">[</span><span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">.</span><span class="nx">formatters</span><span class="p">.</span><span class="nx">inputAddressFormatter</span><span class="p">,</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">.</span><span class="nx">formatters</span><span class="p">.</span><span class="nx">inputDefaultBlockNumberFormatter</span><span class="p">],</span>
         <span class="nx">outputFormatter</span><span class="o">:</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">hexToNumberString</span>
     <span class="p">},{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;getGasPriceSuperFunction&#39;</span><span class="p">,</span>
-        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;eth_gasPriceSuper&#39;</span><span class="p">,</span>
+        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;vap_gasPriceSuper&#39;</span><span class="p">,</span>
         <span class="nx">params</span><span class="o">:</span> <span class="mi">2</span><span class="p">,</span>
         <span class="nx">inputFormatter</span><span class="o">:</span> <span class="p">[</span><span class="kc">null</span><span class="p">,</span> <span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">numberToHex</span><span class="p">]</span>
     <span class="p">}]</span>
@@ -273,7 +273,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
 <span class="nx">web3</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
     <span class="nx">methods</span><span class="o">:</span> <span class="p">[{</span>
         <span class="nx">name</span><span class="o">:</span> <span class="s1">&#39;directCall&#39;</span><span class="p">,</span>
-        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;eth_callForFun&#39;</span><span class="p">,</span>
+        <span class="nx">call</span><span class="o">:</span> <span class="s1">&#39;vap_callForFun&#39;</span><span class="p">,</span>
     <span class="p">}]</span>
 <span class="p">});</span>
 
@@ -284,7 +284,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
         <span class="nx">getGasPriceSuperFunction</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){}</span>
     <span class="p">},</span>
     <span class="nx">directCall</span><span class="o">:</span> <span class="kd">function</span><span class="p">(){},</span>
-    <span class="nx">eth</span><span class="o">:</span> <span class="nx">Eth</span> <span class="p">{...},</span>
+    <span class="nx">vap</span><span class="o">:</span> <span class="nx">Vap</span> <span class="p">{...},</span>
     <span class="nx">bzz</span><span class="o">:</span> <span class="nx">Bzz</span> <span class="p">{...},</span>
     <span class="p">...</span>
 <span class="p">}</span>
@@ -364,7 +364,7 @@ Will return the given provider by the (browser) environment, otherwise <code cla
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">

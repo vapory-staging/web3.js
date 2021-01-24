@@ -16,16 +16,16 @@
  */
 /**
  * @file extend.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
 "use strict";
 
 
-var formatters = require('web3-core-helpers').formatters;
-var Method = require('web3-core-method');
-var utils = require('web3-utils');
+var formatters = require('@vapory/web3-core-helpers').formatters;
+var Method = require('@vapory/web3-core-method');
+var utils = require('@vapory/web3-utils');
 
 
 var extend = function (pckg) {

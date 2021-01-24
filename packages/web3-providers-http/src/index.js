@@ -18,11 +18,11 @@
  * @authors:
  *   Marek Kotewicz <marek@parity.io>
  *   Marian Oancea
- *   Fabian Vogelsteller <fabian@ethereum.org>
+ *   Fabian Vogelsteller <fabian@vapory.org>
  * @date 2015
  */
 
-var errors = require('web3-core-helpers').errors;
+var errors = require('@vapory/web3-core-helpers').errors;
 var XHR2 = require('xhr2'); // jshint ignore: line
 
 /**

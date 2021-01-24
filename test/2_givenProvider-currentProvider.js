@@ -17,11 +17,11 @@ describe('Web3.providers.givenProvider', function () {
 
         });
 
-        it('when instantiating Eth', function () {
+        it('when instantiating Vap', function () {
 
-            var Eth = require('../packages/web3-eth');
+            var Vap = require('../packages/web3-vap');
 
-            assert.deepEqual(Eth.givenProvider, global.web3.currentProvider);
+            assert.deepEqual(Vap.givenProvider, global.web3.currentProvider);
 
         });
     });

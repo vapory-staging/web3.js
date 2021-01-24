@@ -16,7 +16,7 @@
  */
 /**
  * @file givenProvider.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
@@ -28,9 +28,9 @@ var givenProvider = null;
 /* jshint ignore:start */
 var global = Function('return this')();
 
-// EthereumProvider
-if(typeof global.ethereumProvider !== 'undefined') {
-    givenProvider = global.ethereumProvider;
+// VaporyProvider
+if(typeof global.vaporyProvider !== 'undefined') {
+    givenProvider = global.vaporyProvider;
 
 // Legacy web3.currentProvider
 } else if(typeof global.web3 !== 'undefined' && global.web3.currentProvider) {

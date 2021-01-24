@@ -1,6 +1,6 @@
 var chai = require('chai');
 var assert = chai.assert;
-var coder = require('../packages/web3-eth-abi');
+var coder = require('../packages/web3-vap-abi');
 
 
 describe('lib/solidity/coder', function () {
@@ -180,7 +180,7 @@ describe('lib/solidity/coder', function () {
                                                               '131a3afc00d1b1e3461b955e53fc866dcf303b3eb9f4c16f89e388930f48134b' +
                                                               '231a3afc00d1b1e3461b955e53fc866dcf303b3eb9f4c16f89e388930f48134b' +
                                                               '331a3afc00d1b1e3461b955e53fc866dcf303b3eb9f4c16f89e388930f48134b'});
-        test({ type: 'string', value: 'welcome to ethereum. welcome to ethereum. welcome to ethereum.',
+        test({ type: 'string', value: 'welcome to vapory. welcome to vapory. welcome to vapory.',
                                                     expected: '0000000000000000000000000000000000000000000000000000000000000020' +
                                                               '000000000000000000000000000000000000000000000000000000000000003e' +
                                                               '77656c636f6d6520746f20657468657265756d2e2077656c636f6d6520746f20' +

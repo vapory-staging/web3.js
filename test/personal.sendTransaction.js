@@ -19,7 +19,7 @@ var tests = [{
     result: '0xfff12345678976543213456786543212345675432',
     formattedResult: '0xfff12345678976543213456786543212345675432',
     // notification: {
-    //     method: 'eth_subscription',
+    //     method: 'vap_subscription',
     //     params: {
     //         subscription: '0x1234567',
     //         result: '0x9ce59a13059e417087c02d3236a0b1cc'
@@ -44,7 +44,7 @@ var tests = [{
     result: '0x12345678976543213456786543212345675432',
     formattedResult: '0x12345678976543213456786543212345675432',
     // notification: {
-    //     method: 'eth_subscription',
+    //     method: 'vap_subscription',
     //     params: {
     //         subscription: '0x1234567',
     //         result: '0x9ce59a13059e417087c02d3236a0b1cc'
@@ -67,7 +67,7 @@ var tests = [{
     result: '0x12345678976543213456786543212345675432',
     formattedResult: '0x12345678976543213456786543212345675432',
     // notification: {
-    //     method: 'eth_subscription',
+    //     method: 'vap_subscription',
     //     params: {
     //         subscription: '0x1234567',
     //         result: '0x9ce59a13059e417087c02d3236a0b1cc'
@@ -84,5 +84,5 @@ var tests = [{
     call: 'personal_'+ method
 }];
 
-testMethod.runTests(['eth','personal'], method, tests);
+testMethod.runTests(['vap','personal'], method, tests);
 

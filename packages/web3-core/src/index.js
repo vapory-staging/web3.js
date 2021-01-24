@@ -16,14 +16,14 @@
 */
 /**
  * @file index.js
- * @author Fabian Vogelsteller <fabian@ethereum.org>
+ * @author Fabian Vogelsteller <fabian@vapory.org>
  * @date 2017
  */
 
 "use strict";
 
 
-var requestManager = require('web3-core-requestmanager');
+var requestManager = require('@vapory/web3-core-requestmanager');
 var extend = require('./extend.js');
 
 module.exports = {
