@@ -2,6 +2,9 @@
     "name": "@vapory/web3-core-requestmanager",
     "namespace": "vapory",
     "version": "1.0.0-beta.30",
+    "publishConfig": {
+        "access": "public"
+    },
     "description": "Web3 module to handle requests to external providers.",
     "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3-core-requestmanager",
     "license": "LGPL-3.0",

@@ -9,8 +9,8 @@ var method = 'sign';
 var tests = [{
     args: ['Hello World!$*', '0xeb014f8c8b418db6b45774c326a0e64c78914dc0'],
     formattedArgs: ['0xeb014f8c8b418db6b45774c326a0e64c78914dc0', '0x48656c6c6f20576f726c6421242a'],
-    result: '0x5763ab346198e3e6cc4d53996ccdeca0c941cb6cb70d671d97711c421d3bf7922c77ef244ad40e5262d1721bf9638fb06bab8ed3c43bfaa80d6da0be9bbd33dc1b',
-    formattedResult: '0x5763ab346198e3e6cc4d53996ccdeca0c941cb6cb70d671d97711c421d3bf7922c77ef244ad40e5262d1721bf9638fb06bab8ed3c43bfaa80d6da0be9bbd33dc1b',
+    result: '0x1faed7bfdaef674113ac51ac6be374f66d3206c12b4dba4fdbae09edf8b7b8764978aac602da2a536c71a261d20fd6e283f6ad55811d712efec0d9676d8623f21c',
+    formattedResult: '0x1faed7bfdaef674113ac51ac6be374f66d3206c12b4dba4fdbae09edf8b7b8764978aac602da2a536c71a261d20fd6e283f6ad55811d712efec0d9676d8623f21c',
     call: 'vap_'+ method
 },{
     useLocalWallet: function (web3) {
@@ -18,14 +18,14 @@ var tests = [{
     },
     args: ['Hello World!$*', '0xeb014f8c8b418db6b45774c326a0e64c78914dc0'],
     formattedArgs: ['0xeb014f8c8b418db6b45774c326a0e64c78914dc0', '0x48656c6c6f20576f726c6421242a'],
-    result: '0x5763ab346198e3e6cc4d53996ccdeca0c941cb6cb70d671d97711c421d3bf7922c77ef244ad40e5262d1721bf9638fb06bab8ed3c43bfaa80d6da0be9bbd33dc1b',
-    formattedResult: '0x5763ab346198e3e6cc4d53996ccdeca0c941cb6cb70d671d97711c421d3bf7922c77ef244ad40e5262d1721bf9638fb06bab8ed3c43bfaa80d6da0be9bbd33dc1b',
+    result: '0x1faed7bfdaef674113ac51ac6be374f66d3206c12b4dba4fdbae09edf8b7b8764978aac602da2a536c71a261d20fd6e283f6ad55811d712efec0d9676d8623f21c',
+    formattedResult: '0x1faed7bfdaef674113ac51ac6be374f66d3206c12b4dba4fdbae09edf8b7b8764978aac602da2a536c71a261d20fd6e283f6ad55811d712efec0d9676d8623f21c',
     call: null
 },{
     args: ['Hello Wolrd!$*', '0xeb014f8c8b418db6b45774c326a0e64c78914dc0'],
     formattedArgs: ['0xeb014f8c8b418db6b45774c326a0e64c78914dc0', '0x48656c6c6f20576f6c726421242a'],
-    result: '0x680b2c019eb81d5476012ca453a1ac2248dec3d89c2ed20d78177e2e0550b72d702d42c40943f6140b3d2e9fc9981c7fdd428ff93623020969e33b6b406e26851b',
-    formattedResult: '0x680b2c019eb81d5476012ca453a1ac2248dec3d89c2ed20d78177e2e0550b72d702d42c40943f6140b3d2e9fc9981c7fdd428ff93623020969e33b6b406e26851b',
+    result: '0x1ddd3ea6f9ac5f2ffe051dd63bac3ddd75234e1169be4a0bf50b0a9f3afd413c7ab7068df55b1344bf0e3674febd5d98fcd058dc5d822a8cc4fa86cbbd7c47101b',
+    formattedResult: '0x1ddd3ea6f9ac5f2ffe051dd63bac3ddd75234e1169be4a0bf50b0a9f3afd413c7ab7068df55b1344bf0e3674febd5d98fcd058dc5d822a8cc4fa86cbbd7c47101b',
     call: 'vap_'+ method
 },{
     useLocalWallet: function (web3) {
@@ -33,8 +33,8 @@ var tests = [{
     },
     args: ['Hello Wolrd!$*', '0xeb014f8c8b418db6b45774c326a0e64c78914dc0'],
     formattedArgs: ['0xeb014f8c8b418db6b45774c326a0e64c78914dc0', '0x48656c6c6f20576f6c726421242a'],
-    result: '0x680b2c019eb81d5476012ca453a1ac2248dec3d89c2ed20d78177e2e0550b72d702d42c40943f6140b3d2e9fc9981c7fdd428ff93623020969e33b6b406e26851b',
-    formattedResult: '0x680b2c019eb81d5476012ca453a1ac2248dec3d89c2ed20d78177e2e0550b72d702d42c40943f6140b3d2e9fc9981c7fdd428ff93623020969e33b6b406e26851b',
+    result: '0x1ddd3ea6f9ac5f2ffe051dd63bac3ddd75234e1169be4a0bf50b0a9f3afd413c7ab7068df55b1344bf0e3674febd5d98fcd058dc5d822a8cc4fa86cbbd7c47101b',
+    formattedResult: '0x1ddd3ea6f9ac5f2ffe051dd63bac3ddd75234e1169be4a0bf50b0a9f3afd413c7ab7068df55b1344bf0e3674febd5d98fcd058dc5d822a8cc4fa86cbbd7c47101b',
     call: null
 }];
 

@@ -2,6 +2,9 @@
     "name": "@vapory/web3-vap-iban",
     "namespace": "vapory",
     "version": "1.0.0-beta.30",
+    "publishConfig": {
+        "access": "public"
+    },
     "description": "This package converts Vapory addresses to IBAN addresses a vice versa.",
     "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3-vap-iban",
     "license": "LGPL-3.0",

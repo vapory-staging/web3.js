@@ -1197,7 +1197,7 @@ Example
 .. code-block:: javascript
 
     web3.vap.signTransaction({
-        from: "0xEB014f8c8B418Db6b45774c326A0E64C78914dC0",
+        from: "0x240F498486d93C74322DA70936A95c0Ef958b675",
         gasPrice: "20000000000",
         gas: "21000",
         to: '0x3535353535353535353535353535353535353535',

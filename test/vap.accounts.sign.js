@@ -10,13 +10,13 @@ var tests = [
         privateKey: '0xbe6383dad004f233317e46ddb46ad31b16064d14447a95cc1d8c8d4bc61c3728',
         data: 'Some data',
         // signature done with personal_sign
-        signature: '0xa8037a6116c176a25e6fc224947fde9e79a2deaa0dd8b67b366fbdfdbffc01f953e41351267b20d4a89ebfe9c8f03c04de9b345add4a52f15bd026b63c8fb1501b'
+        signature: '0x9946419a3436ec333db03d0e3827c614ff698badb84777f9731a3a1cd42191c26f57016b3e276b6ae778e26f67c1aff46af2684c3d73ae02c9a27e788f34d62e1c'
     }, {
         address: '0xEB014f8c8B418Db6b45774c326A0E64C78914dC0',
         privateKey: '0xbe6383dad004f233317e46ddb46ad31b16064d14447a95cc1d8c8d4bc61c3728',
         data: 'Some data!%$$%&@*',
         // signature done with personal_sign
-        signature: '0x05252412b097c5d080c994d1ea12abcee6f1cae23feb225517a0b691a66e12866b3f54292f9cfef98f390670b4d010fc4af7fcd46e41d72870602c117b14921c1c'
+        signature: '0x5a235ce20eb66956fa139cb2e77b9ffcab491fa748b85d758437a1fc2edffdab4724d38a9fe9c342ee3cedff4b02ef4b94059de8e6ffea1b89957b646f840d381b'
     }
 ];
 

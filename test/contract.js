@@ -208,7 +208,7 @@ var getVapContractInstance = function(abi, address, options, provider) {
 }
 
 var account = {
-    address: '0xEB014f8c8B418Db6b45774c326A0E64C78914dC0',
+    address: '0x240F498486d93C74322DA70936A95c0Ef958b675',
     privateKey: '0xbe6383dad004f233317e46ddb46ad31b16064d14447a95cc1d8c8d4bc61c3728',
 };
 

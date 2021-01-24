@@ -2,6 +2,9 @@
   "name": "@vapory/web3",
   "namespace": "vapory",
   "version": "1.0.0-beta.30",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "Vapory JavaScript API",
   "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3",
   "license": "LGPL-3.0",
