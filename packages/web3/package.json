@@ -48,10 +48,10 @@
   "dependencies": {
     "@vapory/web3-bzz": "1.0.0-beta.30",
     "@vapory/web3-core": "1.0.0-beta.30",
-    "@vapory/web3-vap": "1.0.0-beta.30",
-    "@vapory/web3-vap-personal": "1.0.0-beta.30",
     "@vapory/web3-net": "1.0.0-beta.30",
     "@vapory/web3-shh": "1.0.0-beta.30",
-    "@vapory/web3-utils": "1.0.0-beta.30"
+    "@vapory/web3-utils": "1.0.0-beta.30",
+    "@vapory/web3-vap": "1.0.0-beta.30",
+    "@vapory/web3-vap-personal": "1.0.0-beta.30"
   }
 }

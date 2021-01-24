@@ -10,8 +10,8 @@
     "license": "LGPL-3.0",
     "main": "src/index.js",
     "dependencies": {
-        "underscore": "1.8.3",
+        "@vapory/web3-utils": "1.0.0-beta.30",
         "@vapory/web3-vap-iban": "1.0.0-beta.30",
-        "@vapory/web3-utils": "1.0.0-beta.30"
+        "underscore": "1.8.3"
     }
 }

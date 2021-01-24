@@ -44750,7 +44750,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
        * @return {Object} the emitter
        */
       var _fireError = function _fireError(error, emitter, reject, callback) {
-        /*jshint maxcomplexity: 10 */
+        /*jshint maxcomplexity: 20 */
 
         // add data if given
         if (_.isObject(error) && !(error instanceof Error) && error.data) {
@@ -62497,11 +62497,11 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
         "dependencies": {
           "@vapory/web3-bzz": "1.0.0-beta.30",
           "@vapory/web3-core": "1.0.0-beta.30",
-          "@vapory/web3-vap": "1.0.0-beta.30",
-          "@vapory/web3-vap-personal": "1.0.0-beta.30",
           "@vapory/web3-net": "1.0.0-beta.30",
           "@vapory/web3-shh": "1.0.0-beta.30",
-          "@vapory/web3-utils": "1.0.0-beta.30"
+          "@vapory/web3-utils": "1.0.0-beta.30",
+          "@vapory/web3-vap": "1.0.0-beta.30",
+          "@vapory/web3-vap-personal": "1.0.0-beta.30"
         }
       };
     }, {}], "BN": [function (require, module, exports) {

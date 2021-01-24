@@ -10,9 +10,9 @@
     "license": "LGPL-3.0",
     "main": "src/index.js",
     "dependencies": {
-        "bn.js": "4.11.6",
-        "underscore": "1.8.3",
         "@vapory/web3-core-helpers": "1.0.0-beta.30",
-        "@vapory/web3-utils": "1.0.0-beta.30"
+        "@vapory/web3-utils": "1.0.0-beta.30",
+        "bn.js": "4.11.6",
+        "underscore": "1.8.3"
     }
 }
