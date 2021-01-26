@@ -1,16 +1,16 @@
 {
     "name": "@vapory/web3-vap-personal",
     "namespace": "vapory",
-    "version": "1.0.0-beta.30",
+    "version": "1.0.0-gamma.30",
     "description": "Web3 module to interact with the Vapory blockchain accounts stored in the node.",
     "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3-vap-personal",
     "license": "LGPL-3.0",
     "main": "src/index.js",
     "dependencies": {
-        "@vapory/web3-core": "1.0.0-beta.30",
-        "@vapory/web3-core-helpers": "1.0.0-beta.30",
-        "@vapory/web3-core-method": "1.0.0-beta.30",
-        "@vapory/web3-net": "1.0.0-beta.30",
-        "@vapory/web3-utils": "1.0.0-beta.30"
+        "@vapory/web3-core": "1.0.0-gamma.30",
+        "@vapory/web3-core-helpers": "1.0.0-gamma.30",
+        "@vapory/web3-core-method": "1.0.0-gamma.30",
+        "@vapory/web3-net": "1.0.0-gamma.30",
+        "@vapory/web3-utils": "1.0.0-gamma.30"
     }
 }

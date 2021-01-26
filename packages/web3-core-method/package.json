@@ -1,16 +1,16 @@
 {
     "name": "@vapory/web3-core-method",
     "namespace": "vapory",
-    "version": "1.0.0-beta.30",
+    "version": "1.0.0-gamma.30",
     "description": "Creates the methods on the web3 modules. This is an internal package.",
     "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3-core-method",
     "license": "LGPL-3.0",
     "main": "src/index.js",
     "dependencies": {
-        "underscore": "1.8.3",
-        "@vapory/web3-core-helpers": "1.0.0-beta.30",
-        "@vapory/web3-core-promievent": "1.0.0-beta.30",
-        "@vapory/web3-core-subscriptions": "1.0.0-beta.30",
-        "@vapory/web3-utils": "1.0.0-beta.30"
+        "@vapory/web3-core-helpers": "1.0.0-gamma.30",
+        "@vapory/web3-core-promievent": "1.0.0-gamma.30",
+        "@vapory/web3-core-subscriptions": "1.0.0-gamma.30",
+        "@vapory/web3-utils": "1.0.0-gamma.30",
+        "underscore": "1.8.3"
     }
 }
