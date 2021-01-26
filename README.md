@@ -21,7 +21,7 @@ Please read the [documentation][docs] for more.
 ### Node
 
 ```bash
-npm install web3
+npm install @vapory/web3
 ```
 
 ### Yarn
