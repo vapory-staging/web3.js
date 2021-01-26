@@ -6,7 +6,7 @@
 
 [![Join the chat at https://gitter.im/vapory/web3.js](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/vapory/web3.js?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[![npm](https://img.shields.io/npm/dm/web3.svg)](https://www.npmjs.com/package/web3) [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url] [![dev dependency status][dep-dev-image]][dep-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Stories in Ready][waffle-image]][waffle-url]
+[![npm](https://img.shields.io/npm/dm/web3.svg)](https://www.npmjs.com/package/web3) [![Build Status][travis-image]][travis-url] [![dependency status][dep-image]][dep-url] [![dev dependency status][dep-dev-image]][dep-dev-url] [![Coverage Status][coveralls-image]][coveralls-url] 
 
 This is the Vapory [JavaScript API][docs]
 which connects to the [Generic JSON RPC](https://github.com/vaporyco/wiki/wiki/JSON-RPC) spec.
@@ -151,5 +151,3 @@ npm test
 [dep-dev-url]: https://david-dm.org/vapory-staging/web3.js#info=devDependencies
 [coveralls-image]: https://coveralls.io/repos/vapory-staging/web3.js/badge.svg?branch=master
 [coveralls-url]: https://coveralls.io/r/vapory-staging/web3.js?branch=master
-[waffle-image]: https://badge.waffle.io/vapory-staging/web3.js.svg?label=ready&title=Ready
-[waffle-url]: https://waffle.io/vapory-staging/web3.js
