@@ -34,15 +34,15 @@ describe('lib/web3/batch', function () {
                 var first = payload[0];
                 var second = payload[1];
 
-                assert.equal(first.method, 'eth_getBalance');
+                assert.equal(first.method, 'vap_getBalance');
                 assert.deepEqual(first.params, ['0x0000000000000000000000000000000000000000', 'latest']);
-                assert.equal(second.method, 'eth_getBalance');
+                assert.equal(second.method, 'vap_getBalance');
                 assert.deepEqual(second.params, ['0x0000000000000000000000000000000000000005', 'latest']);
             });
 
             var batch = new web3.BatchRequest();
-            batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
-            batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000005', 'latest', callback2));
+            batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
+            batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000005', 'latest', callback2));
             batch.execute();
         });
 
@@ -71,14 +71,14 @@ describe('lib/web3/batch', function () {
                 var first = payload[0];
                 var second = payload[1];
 
-                assert.equal(first.method, 'eth_accounts');
+                assert.equal(first.method, 'vap_accounts');
                 assert.deepEqual(first.params, []);
                 assert.equal(second.method, 'shh_post');
                 assert.deepEqual(second.params, [{}]);
             });
 
             var batch = new web3.BatchRequest();
-            batch.add(web3.eth.getAccounts.request(callback));
+            batch.add(web3.vap.getAccounts.request(callback));
             batch.add(web3.shh.post.request({}, callback2));
             batch.execute();
         });
@@ -130,10 +130,10 @@ describe('lib/web3/batch', function () {
             provider.injectValidation(function (payload) {
 
 
-                assert.equal(payload[0].method, 'eth_getBalance');
+                assert.equal(payload[0].method, 'vap_getBalance');
                 assert.deepEqual(payload[0].params, ['0x0000000000000000000000000000000000000022', 'latest']);
 
-                assert.equal(payload[1].method, 'eth_call');
+                assert.equal(payload[1].method, 'vap_call');
                 assert.deepEqual(payload[1].params, [{
                     'to': '0x1000000000000000000000000000000000000001',
                     'data': '0xe3d670d70000000000000000000000001000000000000000000000000000000000000001'
@@ -141,7 +141,7 @@ describe('lib/web3/batch', function () {
                     'latest' // default block
                 ]);
 
-                assert.equal(payload[2].method, 'eth_call');
+                assert.equal(payload[2].method, 'vap_call');
                 assert.deepEqual(payload[2].params, [{
                     'to': '0x1000000000000000000000000000000000000001',
                     'from': '0x1000000000000000000000000000000000000002',
@@ -150,7 +150,7 @@ describe('lib/web3/batch', function () {
                     'latest' // default block
                 ]);
 
-                assert.equal(payload[3].method, 'eth_call');
+                assert.equal(payload[3].method, 'vap_call');
                 assert.deepEqual(payload[3].params, [{
                     'to': '0x1000000000000000000000000000000000000001',
                     'from': '0x1000000000000000000000000000000000000003',
@@ -159,7 +159,7 @@ describe('lib/web3/batch', function () {
                     '0xa' // default block
                 ]);
 
-                assert.equal(payload[4].method, 'eth_call');
+                assert.equal(payload[4].method, 'vap_call');
                 assert.deepEqual(payload[4].params, [{
                     'to': '0x1000000000000000000000000000000000000001',
                     'data': '0xe3d670d70000000000000000000000001000000000000000000000000000000000000001'
@@ -170,11 +170,11 @@ describe('lib/web3/batch', function () {
 
 
             var batch = new web3.BatchRequest();
-            batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000022', 'latest', callback));
-            batch.add(new web3.eth.Contract(abi, address).methods.balance(address).call.request(callback2));
-            batch.add(new web3.eth.Contract(abi, address).methods.balance(address).call.request({from: '0x1000000000000000000000000000000000000002'}, callback2));
-            batch.add(new web3.eth.Contract(abi, address).methods.balance(address).call.request({from: '0x1000000000000000000000000000000000000003'}, 10, callback2));
-            batch.add(new web3.eth.Contract(abi, address).methods.balance(address).call.request(10, callback3));
+            batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000022', 'latest', callback));
+            batch.add(new web3.vap.Contract(abi, address).methods.balance(address).call.request(callback2));
+            batch.add(new web3.vap.Contract(abi, address).methods.balance(address).call.request({from: '0x1000000000000000000000000000000000000002'}, callback2));
+            batch.add(new web3.vap.Contract(abi, address).methods.balance(address).call.request({from: '0x1000000000000000000000000000000000000003'}, 10, callback2));
+            batch.add(new web3.vap.Contract(abi, address).methods.balance(address).call.request(10, callback3));
             provider.injectBatchResults([result, result2, result2, result2, result2]);
             batch.execute();
         });
@@ -220,9 +220,9 @@ describe('lib/web3/batch', function () {
                 var first = payload[0];
                 var second = payload[1];
 
-                assert.equal(first.method, 'eth_getBalance');
+                assert.equal(first.method, 'vap_getBalance');
                 assert.deepEqual(first.params, ['0x0000000000000000000000000000000000000000', 'latest']);
-                assert.equal(second.method, 'eth_call');
+                assert.equal(second.method, 'vap_call');
                 assert.deepEqual(second.params, [{
                     'to': '0x1000000000000000000000000000000000000001',
                     'from': '0x0000000000000000000000000000000000000000',
@@ -232,8 +232,8 @@ describe('lib/web3/batch', function () {
             });
 
             var batch = new web3.BatchRequest();
-            batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
-            batch.add(new web3.eth.Contract(abi, address).methods.balance(address).call.request({from: '0x0000000000000000000000000000000000000000'}, 10, callback2));
+            batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
+            batch.add(new web3.vap.Contract(abi, address).methods.balance(address).call.request({from: '0x0000000000000000000000000000000000000000'}, 10, callback2));
             provider.injectBatchResults([result, result2], true); // injects error
             batch.execute();
         });
@@ -267,15 +267,15 @@ describe('lib/web3/batch', function () {
                 var first = payload[0];
                 var second = payload[1];
 
-                assert.equal(first.method, 'eth_getBalance');
+                assert.equal(first.method, 'vap_getBalance');
                 assert.deepEqual(first.params, ['0x0000000000000000000000000000000000000000', 'latest']);
-                assert.equal(second.method, 'eth_getBalance');
+                assert.equal(second.method, 'vap_getBalance');
                 assert.deepEqual(second.params, ['0x0000000000000000000000000000000000000005', 'latest']);
             });
 
             var batch = new web3.BatchRequest();
-            batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
-            batch.add(web3.eth.getBalance.request('0x0000000000000000000000000000000000000005', 'latest', callback2));
+            batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000000', 'latest', callback));
+            batch.add(web3.vap.getBalance.request('0x0000000000000000000000000000000000000005', 'latest', callback2));
             batch.execute();
         });
 

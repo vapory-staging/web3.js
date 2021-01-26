@@ -29,13 +29,13 @@
 
 
 var version = require('../package.json').version;
-var core = require('web3-core');
-var Eth = require('web3-eth');
-var Net = require('web3-net');
-var Personal = require('web3-eth-personal');
-var Shh = require('web3-shh');
-var Bzz = require('web3-bzz');
-var utils = require('web3-utils');
+var core = require('@vapory/web3-core');
+var Vap = require('@vapory/web3-vap');
+var Net = require('@vapory/web3-net');
+var Personal = require('@vapory/web3-vap-personal');
+var Shh = require('@vapory/web3-shh');
+var Bzz = require('@vapory/web3-bzz');
+var utils = require('@vapory/web3-utils');
 
 var Web3 = function Web3() {
     var _this = this;
@@ -46,7 +46,7 @@ var Web3 = function Web3() {
     this.version = version;
     this.utils = utils;
 
-    this.eth = new Eth(this);
+    this.vap = new Vap(this);
     this.shh = new Shh(this);
     this.bzz = new Bzz(this);
 
@@ -55,7 +55,7 @@ var Web3 = function Web3() {
     this.setProvider = function (provider, net) {
         setProvider.apply(_this, arguments);
 
-        this.eth.setProvider(provider, net);
+        this.vap.setProvider(provider, net);
         this.shh.setProvider(provider, net);
         this.bzz.setProvider(provider);
 
@@ -66,7 +66,7 @@ var Web3 = function Web3() {
 Web3.version = version;
 Web3.utils = utils;
 Web3.modules = {
-    Eth: Eth,
+    Vap: Vap,
     Net: Net,
     Personal: Personal,
     Shh: Shh,

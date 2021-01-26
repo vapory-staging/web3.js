@@ -24,7 +24,7 @@
  */
 
 /**
- * Ethereum bloom filter support.
+ * Vapory bloom filter support.
  *
  * TODO UNDOCUMENTED
  *

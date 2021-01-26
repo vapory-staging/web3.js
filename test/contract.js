@@ -1,11 +1,11 @@
 var chai = require('chai');
 var assert = chai.assert;
-var Eth = require('../packages/web3-eth');
+var Vap = require('../packages/web3-vap');
 var sha3 = require('../packages/web3-utils').sha3;
 var FakeIpcProvider = require('./helpers/FakeIpcProvider');
 var FakeHttpProvider = require('./helpers/FakeHttpProvider');
 var Promise = require('bluebird');
-var StandAloneContract = require('../packages/web3-eth-contract');
+var StandAloneContract = require('../packages/web3-vap-contract');
 
 
 var abi = [{
@@ -180,7 +180,7 @@ var getStandAloneContractInstance = function(abi, address, options, provider) {
     return new StandAloneContract(abi, address, options);
 }
 
-var getEthContractInstance = function(abi, address, options, provider) {
+var getVapContractInstance = function(abi, address, options, provider) {
 
     // if no address supplied
     if (address && typeof address != 'string') {
@@ -202,13 +202,13 @@ var getEthContractInstance = function(abi, address, options, provider) {
         options = undefined;
     }
 
-    var eth = new Eth(provider);
-    eth.setProvider(provider);
-    return new eth.Contract(abi, address, options);
+    var vap = new Vap(provider);
+    vap.setProvider(provider);
+    return new vap.Contract(abi, address, options);
 }
 
 var account = {
-    address: '0xEB014f8c8B418Db6b45774c326A0E64C78914dC0',
+    address: '0x240F498486d93C74322DA70936A95c0Ef958b675',
     privateKey: '0xbe6383dad004f233317e46ddb46ad31b16064d14447a95cc1d8c8d4bc61c3728',
 };
 
@@ -476,7 +476,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +'000000000000000000000000'+ addressLowercase.replace('0x','') +'000000000000000000000000000000000000000000000000000000000000000a',
                     from: address2,
@@ -487,7 +487,7 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x1234000000000000000000000000000000000000000000000000000000056789');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             // with instant seal we get the receipt right away
@@ -543,7 +543,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +'000000000000000000000000'+ addressLowercase.replace('0x','') +'000000000000000000000000000000000000000000000000000000000000000a',
                     from: address2,
@@ -554,20 +554,20 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x1234000000000000000000000000000000000000000000000000000000056789');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567');
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -577,7 +577,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult({
@@ -589,7 +589,7 @@ var runTests = function(contractFactory) {
                 gasUsed: '0x0'
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 assert.deepEqual(payload.params, ['0x1234567']);
             });
             provider.injectResult('0x321');
@@ -637,7 +637,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('balance(address)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: signature + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     from: address2,
@@ -685,7 +685,7 @@ var runTests = function(contractFactory) {
             var signature = 'Changed(address,uint256,uint256,uint256)';
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -698,13 +698,13 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x123');
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 done();
 
             });
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x123',
                     result: {
@@ -743,7 +743,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_getLogs');
+                assert.equal(payload.method, 'vap_getLogs');
             });
             provider.injectResult([{
                     address: addressLowercase,
@@ -776,7 +776,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -790,13 +790,13 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 done();
             });
             provider.injectResult(true);
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -855,7 +855,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -869,13 +869,13 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 done();
             });
             provider.injectResult(true);
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -912,7 +912,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -926,13 +926,13 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 done();
             });
             provider.injectResult(true);
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -969,7 +969,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -983,12 +983,12 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
             });
             provider.injectResult(true);
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -1009,7 +1009,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -1051,7 +1051,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -1065,12 +1065,12 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
             });
             provider.injectResult(true);
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -1091,7 +1091,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -1140,7 +1140,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [
                         sha3(signature),
@@ -1154,12 +1154,12 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
             });
             provider.injectResult(true);
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -1180,7 +1180,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x321',
                     result: {
@@ -1234,7 +1234,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params[1], {
                     topics: [],
                     address: addressLowercase
@@ -1244,7 +1244,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
                 assert.equal(payload.jsonrpc, '2.0');
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 done();
             });
             provider.injectResult(true);
@@ -1274,7 +1274,7 @@ var runTests = function(contractFactory) {
 
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x333',
                     result: {
@@ -1296,7 +1296,7 @@ var runTests = function(contractFactory) {
 
 
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x333',
                     result: {
@@ -1324,7 +1324,7 @@ var runTests = function(contractFactory) {
             var contract = contractFactory(abi, address, provider);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase,
@@ -1338,7 +1338,7 @@ var runTests = function(contractFactory) {
             contract.options.address = address2;
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: address2,
@@ -1429,7 +1429,7 @@ var runTests = function(contractFactory) {
             var signature = 'balance(address)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_estimateGas');
+                assert.equal(payload.method, 'vap_estimateGas');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase
@@ -1450,7 +1450,7 @@ var runTests = function(contractFactory) {
             var signature = 'balance(address)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_estimateGas');
+                assert.equal(payload.method, 'vap_estimateGas');
                 assert.deepEqual(payload.params, [{
                     data: '0x1234000000000000000000000000'+ addressLowercase.replace('0x','') +'0000000000000000000000000000000000000000000000000000000000000032'
                 }]);
@@ -1471,7 +1471,7 @@ var runTests = function(contractFactory) {
             var provider = new FakeIpcProvider();
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: '0x8708f4a12454534500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000006000000000000000000000000000000000000000000000000000000000000000a0000000000000000000000000000000000000000000000000000000000000000c30786666323435343533343500000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000004ff24545345000000000000000000000000000000000000000000000000000000534500000000000000000000000000000000000000000000000000000000000045450000000000000000000000000000000000000000000000000000000000004533450000000000000000000000000000000000000000000000000000000000',
                     to: addressLowercase
@@ -1491,7 +1491,7 @@ var runTests = function(contractFactory) {
             var provider = new FakeIpcProvider();
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: '0xbb853481',
                     to: addressLowercase
@@ -1510,7 +1510,7 @@ var runTests = function(contractFactory) {
             var provider = new FakeIpcProvider();
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: '0x533678270000000000000000000000000000000000000000000000000000000000000006',
                     to: addressLowercase
@@ -1531,7 +1531,7 @@ var runTests = function(contractFactory) {
             var signature = 'balance(address)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase
@@ -1552,7 +1552,7 @@ var runTests = function(contractFactory) {
             var signature = 'balance(address)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase
@@ -1573,7 +1573,7 @@ var runTests = function(contractFactory) {
             var provider = new FakeIpcProvider();
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3('balance(address)').slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase
@@ -1581,7 +1581,7 @@ var runTests = function(contractFactory) {
             });
             provider.injectResult('0x000000000000000000000000000000000000000000000000000000000000000a');
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3('owner()').slice(0, 10),
                     to: addressLowercase
@@ -1589,7 +1589,7 @@ var runTests = function(contractFactory) {
             });
             provider.injectResult('0x00000000000000000000000011f4d0a3c12e86b4b5f39b213f7e19d048276dae');
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3('getStr()').slice(0, 10),
                     to: addressLowercase
@@ -1620,7 +1620,7 @@ var runTests = function(contractFactory) {
             var contract = contractFactory(abi, address, provider);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10),
                     to: addressLowercase,
@@ -1645,7 +1645,7 @@ var runTests = function(contractFactory) {
             var contract = contractFactory(abi, address, provider);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10),
                     to: addressLowercase,
@@ -1667,7 +1667,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +'000000000000000000000000'+ addressLowercase.replace('0x','') +'000000000000000000000000000000000000000000000000000000000000000a',
                     from: address2,
@@ -1678,20 +1678,20 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x1234000000000000000000000000000000000000000000000000000000056789');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567');
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -1701,7 +1701,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult({
@@ -1742,7 +1742,7 @@ var runTests = function(contractFactory) {
                 }]
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 assert.deepEqual(payload.params, ['0x1234567']);
             });
             provider.injectResult('0x321');
@@ -1832,7 +1832,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +'000000000000000000000000'+ addressLowercase.replace('0x','') +'000000000000000000000000000000000000000000000000000000000000000a',
                     from: address2,
@@ -1843,20 +1843,20 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x1234000000000000000000000000000000000000000000000000000000056789');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult(null);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567');
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -1866,7 +1866,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult({
@@ -1908,7 +1908,7 @@ var runTests = function(contractFactory) {
                 }]
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 assert.deepEqual(payload.params, ['0x1234567']);
             });
             provider.injectResult('0x321');
@@ -1998,7 +1998,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +'000000000000000000000000'+ addressLowercase.replace('0x','') +'000000000000000000000000000000000000000000000000000000000000000a',
                     from: address2,
@@ -2009,14 +2009,14 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x1234000000000000000000000000000000000000000000000000000000056789');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult(null);
 
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x1234000000000000000000000000000000000000000000000000000000056789']);
             });
             provider.injectResult({
@@ -2057,7 +2057,7 @@ var runTests = function(contractFactory) {
                 }]
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_unsubscribe');
+                assert.equal(payload.method, 'vap_unsubscribe');
                 assert.deepEqual(payload.params, ['0x1234567']);
             });
             provider.injectResult('0x321');
@@ -2147,7 +2147,7 @@ var runTests = function(contractFactory) {
             var signature = 'mySend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                     '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2163,7 +2163,7 @@ var runTests = function(contractFactory) {
             contract.methods.mySend(address, 17).send({from: address, gasPrice: '234564321234'});
         });
 
-        it('should throw error when trying to send ether to a non payable contract function', function () {
+        it('should throw error when trying to send vapor to a non payable contract function', function () {
             var provider = new FakeIpcProvider();
 
             var contract = contractFactory(abi, address, provider);
@@ -2182,12 +2182,12 @@ var runTests = function(contractFactory) {
             }
         });
 
-        it('should not throw error when trying to not send ether to a non payable contract function', function (done) {
+        it('should not throw error when trying to not send vapor to a non payable contract function', function (done) {
             var provider = new FakeIpcProvider();
             var signature = 'myDisallowedSend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                     '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2222,7 +2222,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +
                     '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2243,7 +2243,7 @@ var runTests = function(contractFactory) {
             var signature = sha3('mySend(address,uint256)').slice(0, 10);
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: signature +
                     '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2264,7 +2264,7 @@ var runTests = function(contractFactory) {
             var signature = 'mySend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                     '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2298,7 +2298,7 @@ var runTests = function(contractFactory) {
                 count++;
                 if(count > 1) return;
 
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase,
@@ -2323,7 +2323,7 @@ var runTests = function(contractFactory) {
             var signature = 'balance(address)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase,
@@ -2348,7 +2348,7 @@ var runTests = function(contractFactory) {
             var signature = 'balance(address)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) + '000000000000000000000000'+ addressLowercase.replace('0x',''),
                     to: addressLowercase,
@@ -2373,7 +2373,7 @@ var runTests = function(contractFactory) {
             var signature = 'mySend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                         '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2398,7 +2398,7 @@ var runTests = function(contractFactory) {
             var signature = 'mySend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_gasPrice');
+                assert.equal(payload.method, 'vap_gasPrice');
                 assert.deepEqual(payload.params, []);
             });
 
@@ -2406,7 +2406,7 @@ var runTests = function(contractFactory) {
 
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                     '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2429,7 +2429,7 @@ var runTests = function(contractFactory) {
             var signature = 'mySend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                         '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2456,7 +2456,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
 
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                         '000000000000000000000000'+ addressLowercase.replace('0x','') +
@@ -2482,7 +2482,7 @@ var runTests = function(contractFactory) {
             var signature = 'mySend(address,uint256)';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_estimateGas');
+                assert.equal(payload.method, 'vap_estimateGas');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                         '000000000000000000000000' + addressLowercase.replace('0x','') +
@@ -2505,7 +2505,7 @@ var runTests = function(contractFactory) {
             var signature = 'testArr(int[])';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getLogs');
+                assert.equal(payload.method, 'vap_getLogs');
                 assert.deepEqual(payload.params, [{
                     address: addressLowercase,
                     topics: [
@@ -2617,7 +2617,7 @@ var runTests = function(contractFactory) {
             var signature = 'testArr(int[])';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                         '0000000000000000000000000000000000000000000000000000000000000020' +
@@ -2645,7 +2645,7 @@ var runTests = function(contractFactory) {
             var signature = 'testArr(int[])';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10) +
                         '0000000000000000000000000000000000000000000000000000000000000020' +
@@ -2672,7 +2672,7 @@ var runTests = function(contractFactory) {
             var signature = 'owner()';
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_call');
+                assert.equal(payload.method, 'vap_call');
                 assert.deepEqual(payload.params, [{
                     data: sha3(signature).slice(0, 10),
                     to: addressLowercase
@@ -2698,7 +2698,7 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x1234567');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: '0x1234567000000000000000000000000555456789012345678901234567890123456789100000000000000000000000000000000000000000000000000000000000000c8' ,
                     from: addressLowercase,
@@ -2728,7 +2728,7 @@ var runTests = function(contractFactory) {
 
             provider.injectValidation(function (payload) {
 
-                assert.equal(payload.method, 'eth_sendTransaction');
+                assert.equal(payload.method, 'vap_sendTransaction');
                 assert.deepEqual(payload.params, [{
                     data: '0x1234567000000000000000000000000'+ addressLowercase.replace('0x','') +'00000000000000000000000000000000000000000000000000000000000000c8' ,
                     from: addressLowercase,
@@ -2740,21 +2740,21 @@ var runTests = function(contractFactory) {
             provider.injectResult('0x5550000000000000000000000000000000000000000000000000000000000032');
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x5550000000000000000000000000000000000000000000000000000000000032']);
             });
             provider.injectResult(null);
 
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_subscribe');
+                assert.equal(payload.method, 'vap_subscribe');
                 assert.deepEqual(payload.params, ['newHeads']);
             });
             provider.injectResult('0x1234567');
 
             // fake newBlock
             provider.injectNotification({
-                method: 'eth_subscription',
+                method: 'vap_subscription',
                 params: {
                     subscription: '0x1234567',
                     result: {
@@ -2764,7 +2764,7 @@ var runTests = function(contractFactory) {
             });
 
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getTransactionReceipt');
+                assert.equal(payload.method, 'vap_getTransactionReceipt');
                 assert.deepEqual(payload.params, ['0x5550000000000000000000000000000000000000000000000000000000000032']);
             });
             provider.injectResult({
@@ -2772,7 +2772,7 @@ var runTests = function(contractFactory) {
                 blockHash: '0xffdd'
             });
             provider.injectValidation(function (payload) {
-                assert.equal(payload.method, 'eth_getCode');
+                assert.equal(payload.method, 'vap_getCode');
                 assert.deepEqual(payload.params, [addressLowercase, 'latest']);
             });
             provider.injectResult('0x321');
@@ -2814,15 +2814,15 @@ var runTests = function(contractFactory) {
 }
 
 describe('typical usage', function() {
-    runTests(getEthContractInstance);
+    runTests(getVapContractInstance);
 
     it('should deploy a contract, sign transaction, and return contract instance', function (done) {
         var provider = new FakeIpcProvider();
-        var eth = new Eth(provider);
-        eth.accounts.wallet.add(account.privateKey);
+        var vap = new Vap(provider);
+        vap.accounts.wallet.add(account.privateKey);
 
         provider.injectValidation(function (payload) {
-            var expected = eth.accounts.wallet[0].signTransaction({
+            var expected = vap.accounts.wallet[0].signTransaction({
                 data: '0x1234567000000000000000000000000' + account.address.toLowerCase().replace('0x', '') + '00000000000000000000000000000000000000000000000000000000000000c8',
                 from: account.address.toLowerCase(),
                 gas: '0xc350',
@@ -2831,7 +2831,7 @@ describe('typical usage', function() {
                 nonce: '0x1',
             }).then(function (tx) {
                 const expected = tx.rawTransaction;
-                assert.equal(payload.method, 'eth_sendRawTransaction');
+                assert.equal(payload.method, 'vap_sendRawTransaction');
                 assert.deepEqual(payload.params, [expected]);
             });
         });
@@ -2839,20 +2839,20 @@ describe('typical usage', function() {
         provider.injectResult('0x5550000000000000000000000000000000000000000000000000000000000032');
 
         provider.injectValidation(function (payload) {
-            assert.equal(payload.method, 'eth_getTransactionReceipt');
+            assert.equal(payload.method, 'vap_getTransactionReceipt');
             assert.deepEqual(payload.params, ['0x5550000000000000000000000000000000000000000000000000000000000032']);
         });
         provider.injectResult(null);
 
         provider.injectValidation(function (payload) {
-            assert.equal(payload.method, 'eth_subscribe');
+            assert.equal(payload.method, 'vap_subscribe');
             assert.deepEqual(payload.params, ['newHeads']);
         });
         provider.injectResult('0x1234567');
 
         // fake newBlock
         provider.injectNotification({
-            method: 'eth_subscription',
+            method: 'vap_subscription',
             params: {
                 subscription: '0x1234567',
                 result: {
@@ -2862,7 +2862,7 @@ describe('typical usage', function() {
         });
 
         provider.injectValidation(function (payload) {
-            assert.equal(payload.method, 'eth_getTransactionReceipt');
+            assert.equal(payload.method, 'vap_getTransactionReceipt');
             assert.deepEqual(payload.params, ['0x5550000000000000000000000000000000000000000000000000000000000032']);
         });
 
@@ -2871,13 +2871,13 @@ describe('typical usage', function() {
             blockHash: '0xffdd'
         });
         provider.injectValidation(function (payload) {
-            assert.equal(payload.method, 'eth_getCode');
+            assert.equal(payload.method, 'vap_getCode');
             assert.deepEqual(payload.params, [addressLowercase, 'latest']);
         });
         provider.injectResult('0x321');
 
 
-        var contract = new eth.Contract(abi);
+        var contract = new vap.Contract(abi);
 
         contract.deploy({
             data: '0x1234567',

@@ -15,19 +15,19 @@ For more see the `Swarm Docs <http://swarm-guide.readthedocs.io/en/latest/>`_.
 
 .. code-block:: javascript
 
-    var Bzz = require('web3-bzz');
+    var Bzz = require('@vapory/web3-bzz');
 
-    // will autodetect if the "ethereum" object is present and will either connect to the local swarm node, or the swarm-gateways.net.
+    // will autodetect if the "vapory" object is present and will either connect to the local swarm node, or the swarm-gateways.net.
     // Optional you can give your own provider URL; If no provider URL is given it will use "http://swarm-gateways.net"
     var bzz = new Bzz(Bzz.givenProvider || 'http://swarm-gateways.net');
 
 
     // or using the web3 umbrella package
 
-    var Web3 = require('web3');
+    var Web3 = require('@vapory/web3');
     var web3 = new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546');
 
-    // -> web3.bzz.currentProvider // if Web3.givenProvider was an ethereum provider it will set: "http://localhost:8500" otherwise it will set: "http://swarm-gateways.net"
+    // -> web3.bzz.currentProvider // if Web3.givenProvider was an vapory provider it will set: "http://localhost:8500" otherwise it will set: "http://swarm-gateways.net"
 
     // set the provider manually if necessary
     web3.bzz.setProvider("http://localhost:8500");
@@ -45,7 +45,7 @@ setProvider
 
 Will change the provider for its module.
 
-.. note:: When called on the umbrella package ``web3`` it will also set the provider for all sub modules ``web3.eth``, ``web3.shh``, etc EXCEPT ``web3.bzz`` which needs a separate provider at all times.
+.. note:: When called on the umbrella package ``web3`` it will also set the provider for all sub modules ``web3.vap``, ``web3.shh``, etc EXCEPT ``web3.bzz`` which needs a separate provider at all times.
 
 ----------
 Parameters
@@ -65,7 +65,7 @@ Example
 
 .. code-block:: javascript
 
-    var Bzz = require('web3-bzz');
+    var Bzz = require('@vapory/web3-bzz');
     var bzz = new Bzz('http://localhost:8500');
 
     // change provider
@@ -81,7 +81,7 @@ givenProvider
 
     web3.bzz.givenProvider
 
-When using web3.js in an Ethereum compatible browser, it will set with the current native provider by that browser.
+When using web3.js in an Vapory compatible browser, it will set with the current native provider by that browser.
 Will return the given provider by the (browser) environment, otherwise ``null``.
 
 

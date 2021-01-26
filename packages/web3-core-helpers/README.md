@@ -17,7 +17,7 @@ npm install web3-core-helpers
 
 ```js
 // in node.js
-var helpers = require('web3-core-helpers');
+var helpers = require('@vapory/web3-core-helpers');
 
 helpers.formatters;
 helpers.errors;
@@ -26,6 +26,6 @@ helpers.errors;
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

@@ -6,7 +6,7 @@ getId
 
 .. code-block:: javascript
 
-    web3.eth.net.getId([callback])
+    web3.vap.net.getId([callback])
     web3.bzz.net.getId([callback])
     web3.shh.net.getId([callback])
 
@@ -30,7 +30,7 @@ Example
 
 .. code-block:: javascript
 
-    web3.eth.net.getId()
+    web3.vap.net.getId()
     .then(console.log);
     > 1
 
@@ -42,7 +42,7 @@ isListening
 
 .. code-block:: javascript
 
-    web3.eth.net.isListening([callback])
+    web3.vap.net.isListening([callback])
     web3.bzz.net.isListening([callback])
     web3.shh.net.isListening([callback])
 
@@ -66,7 +66,7 @@ Example
 
 .. code-block:: javascript
 
-    web3.eth.isListening()
+    web3.vap.isListening()
     .then(console.log);
     > true
 
@@ -77,7 +77,7 @@ getPeerCount
 
 .. code-block:: javascript
 
-    web3.eth.net.getPeerCount([callback])
+    web3.vap.net.getPeerCount([callback])
     web3.bzz.net.getPeerCount([callback])
     web3.shh.net.getPeerCount([callback])
 
@@ -101,6 +101,6 @@ Example
 
 .. code-block:: javascript
 
-    web3.eth.getPeerCount()
+    web3.vap.getPeerCount()
     .then(console.log);
     > 25

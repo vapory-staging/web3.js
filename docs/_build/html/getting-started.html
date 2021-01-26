@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <title>Getting Started &#8212; web3.js 1.0.0 documentation</title>
-    
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" />
     <link rel="next" title="Callbacks Promises Events" href="callbacks-promises-events.html" />
-    <link rel="prev" title="web3.js - Ethereum JavaScript API" href="index.html" /> 
+    <link rel="prev" title="web3.js - Vapory JavaScript API" href="index.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -40,26 +40,26 @@
           <a href="callbacks-promises-events.html" title="Callbacks Promises Events"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="web3.js - Ethereum JavaScript API"
+          <a href="index.html" title="web3.js - Vapory JavaScript API"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/ethereum/wiki/wiki/JavaScript-API">github.com/ethereum/wiki/wiki/JavaScript-API</a>.</p>
+<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/vaporyco/wiki/wiki/JavaScript-API">github.com/vaporyco/wiki/wiki/JavaScript-API</a>.</p>
 </div>
 <div class="section" id="getting-started">
 <h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
-<p>The web3.js library is a collection of modules which contain specific functionality for the ethereum ecosystem.</p>
+<p>The web3.js library is a collection of modules which contain specific functionality for the vapory ecosystem.</p>
 <ul class="simple">
-<li>The <code class="docutils literal"><span class="pre">web3-eth</span></code> is for the ethereum blockchain and smart contracts</li>
+<li>The <code class="docutils literal"><span class="pre">web3-vap</span></code> is for the vapory blockchain and smart contracts</li>
 <li>The <code class="docutils literal"><span class="pre">web3-shh</span></code> is for the whisper protocol to communicate p2p and broadcast</li>
 <li>The <code class="docutils literal"><span class="pre">web3-bzz</span></code> is for the swarm protocol, the decentralized file storage</li>
 <li>The <code class="docutils literal"><span class="pre">web3-utils</span></code> contains useful helper functions for Dapp developers.</li>
@@ -69,11 +69,11 @@
 <span class="target" id="index-0"></span><span class="target" id="index-1"></span><p id="index-2">First you need to get web3.js into your project. This can be done using the following methods:</p>
 <ul class="simple">
 <li>npm: <code class="docutils literal"><span class="pre">npm</span> <span class="pre">install</span> <span class="pre">web3</span></code></li>
-<li>meteor: <code class="docutils literal"><span class="pre">meteor</span> <span class="pre">add</span> <span class="pre">ethereum:web3</span></code></li>
+<li>meteor: <code class="docutils literal"><span class="pre">meteor</span> <span class="pre">add</span> <span class="pre">vapory:web3</span></code></li>
 <li>pure js: link the <code class="docutils literal"><span class="pre">dist/web3.min.js</span></code></li>
 </ul>
 <p>After that you need to create a web3 instance and set a provider.
-Ethereum supported Browsers like Mist or MetaMask will have a <code class="docutils literal"><span class="pre">ethereumProvider</span></code> or <code class="docutils literal"><span class="pre">web3.currentProvider</span></code> available, web3.js is setting this one to <code class="docutils literal"><span class="pre">Web3.givenProvider</span></code>.
+Vapory supported Browsers like Mist or MetaMask will have a <code class="docutils literal"><span class="pre">vaporyProvider</span></code> or <code class="docutils literal"><span class="pre">web3.currentProvider</span></code> available, web3.js is setting this one to <code class="docutils literal"><span class="pre">Web3.givenProvider</span></code>.
 If this property is <code class="docutils literal"><span class="pre">null</span></code> you need to connect to a remote/local node.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="c1">// in node.js use: var Web3 = require(&#39;web3&#39;);</span>
 
@@ -100,7 +100,7 @@ If this property is <code class="docutils literal"><span class="pre">null</span>
 
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">web3.js - Ethereum JavaScript API</a></p>
+                        title="previous chapter">web3.js - Vapory JavaScript API</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="callbacks-promises-events.html"
                         title="next chapter">Callbacks Promises Events</a></p>
@@ -135,9 +135,9 @@ If this property is <code class="docutils literal"><span class="pre">null</span>
           <a href="callbacks-promises-events.html" title="Callbacks Promises Events"
              >next</a> |</li>
         <li class="right" >
-          <a href="index.html" title="web3.js - Ethereum JavaScript API"
+          <a href="index.html" title="web3.js - Vapory JavaScript API"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">

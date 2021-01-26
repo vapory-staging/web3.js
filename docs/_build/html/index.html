@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
-    <title>web3.js - Ethereum JavaScript API &#8212; web3.js 1.0.0 documentation</title>
-    
+
+    <title>web3.js - Vapory JavaScript API &#8212; web3.js 1.0.0 documentation</title>
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -26,7 +26,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="web3.js 1.0.0 documentation" href="#" />
-    <link rel="next" title="Getting Started" href="getting-started.html" /> 
+    <link rel="next" title="Getting Started" href="getting-started.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,22 +38,22 @@
         <li class="right" >
           <a href="getting-started.html" title="Getting Started"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/ethereum/wiki/wiki/JavaScript-API">github.com/ethereum/wiki/wiki/JavaScript-API</a>.</p>
+<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/vaporyco/wiki/wiki/JavaScript-API">github.com/vaporyco/wiki/wiki/JavaScript-API</a>.</p>
 </div>
-<div class="section" id="web3-js-ethereum-javascript-api">
-<h1>web3.js - Ethereum JavaScript API<a class="headerlink" href="#web3-js-ethereum-javascript-api" title="Permalink to this headline">¶</a></h1>
-<p>web3.js is a collection of libraries which allow you to interact with a local or remote ethereum node,
+<div class="section" id="web3-js-vapory-javascript-api">
+<h1>web3.js - Vapory JavaScript API<a class="headerlink" href="#web3-js-vapory-javascript-api" title="Permalink to this headline">¶</a></h1>
+<p>web3.js is a collection of libraries which allow you to interact with a local or remote vapory node,
 using a HTTP or IPC connection.</p>
 <p>The following documentation will guide you through <a class="reference internal" href="getting-started.html#adding-web3"><span class="std std-ref">installing and running web3.js</span></a>,
 as well as providing a <span class="xref std std-ref">API reference documentation</span> with examples.</p>
@@ -88,145 +88,145 @@ as well as providing a <span class="xref std std-ref">API reference documentatio
 <li class="toctree-l2"><a class="reference internal" href="web3.html#extend">extend</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth.html">web3.eth</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#note-on-checksum-addresses">Note on checksum addresses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#subscribe">subscribe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#contract">Contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#iban">Iban</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#personal">personal</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#accounts">accounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#abi">abi</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#net">net</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#setprovider">setProvider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#providers">providers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#givenprovider">givenProvider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#currentprovider">currentProvider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#batchrequest">BatchRequest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#extend">extend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#defaultaccount">defaultAccount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#defaultblock">defaultBlock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getprotocolversion">getProtocolVersion</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#issyncing">isSyncing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getcoinbase">getCoinbase</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#ismining">isMining</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#gethashrate">getHashrate</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getgasprice">getGasPrice</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getaccounts">getAccounts</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getblocknumber">getBlockNumber</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getbalance">getBalance</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getstorageat">getStorageAt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getcode">getCode</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getblock">getBlock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getblocktransactioncount">getBlockTransactionCount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getuncle">getUncle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#gettransaction">getTransaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#gettransactionfromblock">getTransactionFromBlock</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#gettransactionreceipt">getTransactionReceipt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#gettransactioncount">getTransactionCount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#sendtransaction">sendTransaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#sendsignedtransaction">sendSignedTransaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#sign">sign</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#signtransaction">signTransaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#call">call</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#estimategas">estimateGas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getpastlogs">getPastLogs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getcompilers">getCompilers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#compile-solidity">compile.solidity</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#compile-lll">compile.lll</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#compile-serpent">compile.serpent</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#getwork">getWork</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth.html#submitwork">submitWork</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap.html">web3.vap</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#note-on-checksum-addresses">Note on checksum addresses</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#subscribe">subscribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#contract">Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#iban">Iban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#personal">personal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#accounts">accounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#abi">abi</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#net">net</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#setprovider">setProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#providers">providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#givenprovider">givenProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#currentprovider">currentProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#batchrequest">BatchRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#extend">extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#defaultaccount">defaultAccount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#defaultblock">defaultBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getprotocolversion">getProtocolVersion</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#issyncing">isSyncing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getcoinbase">getCoinbase</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#ismining">isMining</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#gethashrate">getHashrate</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getgasprice">getGasPrice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getaccounts">getAccounts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getblocknumber">getBlockNumber</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getbalance">getBalance</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getstorageat">getStorageAt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getcode">getCode</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getblock">getBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getblocktransactioncount">getBlockTransactionCount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getuncle">getUncle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#gettransaction">getTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#gettransactionfromblock">getTransactionFromBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#gettransactionreceipt">getTransactionReceipt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#gettransactioncount">getTransactionCount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#sendtransaction">sendTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#sendsignedtransaction">sendSignedTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#sign">sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#signtransaction">signTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#call">call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#estimategas">estimateGas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getpastlogs">getPastLogs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getcompilers">getCompilers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#compile-solidity">compile.solidity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#compile-lll">compile.lll</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#compile-serpent">compile.serpent</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#getwork">getWork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap.html#submitwork">submitWork</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth-subscribe.html">web3.eth.subscribe</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-subscribe.html#subscribe">subscribe</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-subscribe.html#clearsubscriptions">clearSubscriptions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-subscribe.html#subscribe-pendingtransactions">subscribe(&#8220;pendingTransactions&#8221;)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-subscribe.html#subscribe-newblockheaders">subscribe(&#8220;newBlockHeaders&#8221;)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-subscribe.html#subscribe-syncing">subscribe(&#8220;syncing&#8221;)</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-subscribe.html#subscribe-logs">subscribe(&#8220;logs&#8221;)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap-subscribe.html">web3.vap.subscribe</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-subscribe.html#subscribe">subscribe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-subscribe.html#clearsubscriptions">clearSubscriptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-subscribe.html#subscribe-pendingtransactions">subscribe(&#8220;pendingTransactions&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-subscribe.html#subscribe-newblockheaders">subscribe(&#8220;newBlockHeaders&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-subscribe.html#subscribe-syncing">subscribe(&#8220;syncing&#8221;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-subscribe.html#subscribe-logs">subscribe(&#8220;logs&#8221;)</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth-contract.html">web3.eth.Contract</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#new-contract">new contract</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#properties">= Properties =</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#options">options</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#options-address">options.address</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#options-jsoninterface">options.jsonInterface</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#methods">= Methods =</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#clone">clone</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#deploy">deploy</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#id12">methods</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#methods-mymethod-call">methods.myMethod.call</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#methods-mymethod-send">methods.myMethod.send</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#methods-mymethod-estimategas">methods.myMethod.estimateGas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#methods-mymethod-encodeabi">methods.myMethod.encodeABI</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#events">= Events =</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#once">once</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#contract-events">events</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#events-allevents">events.allEvents</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-contract.html#getpastevents">getPastEvents</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap-contract.html">web3.vap.Contract</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#new-contract">new contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#properties">= Properties =</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#options">options</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#options-address">options.address</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#options-jsoninterface">options.jsonInterface</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#methods">= Methods =</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#clone">clone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#deploy">deploy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#id12">methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#methods-mymethod-call">methods.myMethod.call</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#methods-mymethod-send">methods.myMethod.send</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#methods-mymethod-estimategas">methods.myMethod.estimateGas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#methods-mymethod-encodeabi">methods.myMethod.encodeABI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#events">= Events =</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#once">once</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#contract-events">events</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#events-allevents">events.allEvents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-contract.html#getpastevents">getPastEvents</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth-accounts.html">web3.eth.accounts</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#create">create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#privatekeytoaccount">privateKeyToAccount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#signtransaction">signTransaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#recovertransaction">recoverTransaction</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#hashmessage">hashMessage</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#sign">sign</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#recover">recover</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#encrypt">encrypt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#decrypt">decrypt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet">wallet</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-create">wallet.create</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-add">wallet.add</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-remove">wallet.remove</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-clear">wallet.clear</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-encrypt">wallet.encrypt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-decrypt">wallet.decrypt</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-save">wallet.save</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-accounts.html#wallet-load">wallet.load</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap-accounts.html">web3.vap.accounts</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#create">create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#privatekeytoaccount">privateKeyToAccount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#signtransaction">signTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#recovertransaction">recoverTransaction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#hashmessage">hashMessage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#sign">sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#recover">recover</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#encrypt">encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#decrypt">decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet">wallet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-create">wallet.create</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-add">wallet.add</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-remove">wallet.remove</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-clear">wallet.clear</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-encrypt">wallet.encrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-decrypt">wallet.decrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-save">wallet.save</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-accounts.html#wallet-load">wallet.load</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth-personal.html">web3.eth.personal</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#setprovider">setProvider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#providers">providers</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#givenprovider">givenProvider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#currentprovider">currentProvider</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#batchrequest">BatchRequest</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#extend">extend</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#newaccount">newAccount</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#sign">sign</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-personal.html#ecrecover">ecRecover</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap-personal.html">web3.vap.personal</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#setprovider">setProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#providers">providers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#givenprovider">givenProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#currentprovider">currentProvider</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#batchrequest">BatchRequest</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#extend">extend</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#newaccount">newAccount</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#sign">sign</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-personal.html#ecrecover">ecRecover</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth-iban.html">web3.eth.Iban</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#iban">Iban</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#toaddress">toAddress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#toiban">toIban</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#fromethereumaddress">fromEthereumAddress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#frombban">fromBban</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#createindirect">createIndirect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#isvalid">isValid</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#isdirect">isDirect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#isindirect">isIndirect</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#checksum">checksum</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#institution">institution</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#client">client</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#id34">toAddress</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-iban.html#tostring">toString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap-iban.html">web3.vap.Iban</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#iban">Iban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#toaddress">toAddress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#toiban">toIban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#fromvaporyaddress">fromVaporyAddress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#frombban">fromBban</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#createindirect">createIndirect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#isvalid">isValid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#isdirect">isDirect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#isindirect">isIndirect</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#checksum">checksum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#institution">institution</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#client">client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#id34">toAddress</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-iban.html#tostring">toString</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="web3-eth-abi.html">web3.eth.abi</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#encodefunctionsignature">encodeFunctionSignature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#encodeeventsignature">encodeEventSignature</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#encodeparameter">encodeParameter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#encodeparameters">encodeParameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#encodefunctioncall">encodeFunctionCall</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#decodeparameter">decodeParameter</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#decodeparameters">decodeParameters</a></li>
-<li class="toctree-l2"><a class="reference internal" href="web3-eth-abi.html#decodelog">decodeLog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="web3-vap-abi.html">web3.vap.abi</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#encodefunctionsignature">encodeFunctionSignature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#encodeeventsignature">encodeEventSignature</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#encodeparameter">encodeParameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#encodeparameters">encodeParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#encodefunctioncall">encodeFunctionCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#decodeparameter">decodeParameter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#decodeparameters">decodeParameters</a></li>
+<li class="toctree-l2"><a class="reference internal" href="web3-vap-abi.html#decodelog">decodeLog</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="web3-net.html">web3.*.net</a><ul>
@@ -354,7 +354,7 @@ as well as providing a <span class="xref std std-ref">API reference documentatio
         <li class="right" >
           <a href="getting-started.html" title="Getting Started"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="#">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">

@@ -29,13 +29,13 @@ This will expose the `Web3Personal` object on the window object.
 
 ```js
 // in node.js
-var Web3Personal = require('web3-shh');
+var Web3Personal = require('@vapory/web3-shh');
 
 var shh = new Web3Personal('ws://localhost:8546');
 ```
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

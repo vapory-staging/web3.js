@@ -29,13 +29,13 @@ This will expose the `Web3HttpProvider` object on the window object.
 
 ```js
 // in node.js
-var Web3HttpProvider = require('web3-providers-http');
+var Web3HttpProvider = require('@vapory/web3-providers-http');
 
 var http = new Web3HttpProvider('http://localhost:8545');
 ```
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

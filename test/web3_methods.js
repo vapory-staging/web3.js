@@ -8,7 +8,7 @@ describe('web3', function() {
 
         u.propertyExists(web3, 'givenProvider');
 
-        u.propertyExists(web3, 'eth');
+        u.propertyExists(web3, 'vap');
         u.propertyExists(web3, 'bzz');
         u.propertyExists(web3, 'shh');
 

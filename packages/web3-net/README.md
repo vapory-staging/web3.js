@@ -29,13 +29,13 @@ This will expose the `Web3Net` object on the window object.
 
 ```js
 // in node.js
-var Web3Net = require('web3-net');
+var Web3Net = require('@vapory/web3-net');
 
 var net = new Web3Net('ws://localhost:8546');
 ```
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

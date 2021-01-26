@@ -1,7 +1,7 @@
 var _ = require('underscore');
 var chai = require('chai');
 var assert = chai.assert;
-var coder = require('../packages/web3-eth-abi');
+var coder = require('../packages/web3-vap-abi');
 
 // TODO check line 108 again!
 
@@ -227,11 +227,11 @@ describe('lib/solidity/coder', function () {
                                                             value: 'c3a40000c3a40000000000000000000000000000000000000000000000000000'});
         test({ type: 'address', expected: '0x407D73d8a49eeb85D32Cf465507dd71d507100c1',
                                                             value: '000000000000000000000000407d73d8a49eeb85d32cf465507dd71d507100c1'});
-        test({ type: 'string', expected: 'welcome to ethereum. welcome to ethereum. welcome to ethereum.',
+        test({ type: 'string', expected: 'welcome to vapory. welcome to vapory. welcome to vapory.',
                                                             value: '0000000000000000000000000000000000000000000000000000000000000020' +
-                                                                    '000000000000000000000000000000000000000000000000000000000000003e' +
-                                                                    '77656c636f6d6520746f20657468657265756d2e2077656c636f6d6520746f20' +
-                                                                    '657468657265756d2e2077656c636f6d6520746f20657468657265756d2e0000'});
+                                                                    '0000000000000000000000000000000000000000000000000000000000000038' +
+                                                                    '77656c636f6d6520746f207661706f72792e2077656c636f6d6520746f207661' +
+                                                                    '706f72792e2077656c636f6d6520746f207661706f72792e0000000000000000'});
         test({ type: 'bytes', expected: '0xffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff' +
                                           'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff' +
                                           'ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff' +

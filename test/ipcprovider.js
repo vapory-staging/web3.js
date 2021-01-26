@@ -19,7 +19,7 @@ describe('web3-providers-ipc', function () {
     // describe('send', function () {
     //     it('should send basic async request', function (done) {
     //         var provider = new IpcProvider('', net);
-    //         provider.send({id: 1, method: 'eth_test'}, function (err, result) {
+    //         provider.send({id: 1, method: 'vap_test'}, function (err, result) {
     //             assert.isObject(result);
     //             done();
     //         });

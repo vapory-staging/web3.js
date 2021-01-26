@@ -29,7 +29,7 @@ This will expose the `Web3PromiEvent` object on the window object.
 
 ```js
 // in node.js
-var Web3PromiEvent = require('web3-core-promievent');
+var Web3PromiEvent = require('@vapory/web3-core-promievent');
 
 var myFunc = function(){
     var promiEvent = Web3PromiEvent();
@@ -51,6 +51,6 @@ myFunc()
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

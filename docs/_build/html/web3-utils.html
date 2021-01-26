@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <title>web3.utils &#8212; web3.js 1.0.0 documentation</title>
-    
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -26,7 +26,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" />
-    <link rel="prev" title="web3.shh" href="web3-shh.html" /> 
+    <link rel="prev" title="web3.shh" href="web3-shh.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -38,22 +38,22 @@
         <li class="right" >
           <a href="web3-shh.html" title="web3.shh"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="admonition note" id="utils">
 <p class="first admonition-title">Note</p>
-<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/ethereum/wiki/wiki/JavaScript-API">github.com/ethereum/wiki/wiki/JavaScript-API</a>.</p>
+<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/vaporyco/wiki/wiki/JavaScript-API">github.com/vaporyco/wiki/wiki/JavaScript-API</a>.</p>
 </div>
 <div class="section" id="web3-utils">
 <h1>web3.utils<a class="headerlink" href="#web3-utils" title="Permalink to this headline">¶</a></h1>
-<p>This package provides utility functions for Ethereum dapps and other web3.js packages.</p>
+<p>This package provides utility functions for Vapory dapps and other web3.js packages.</p>
 <hr class="docutils" />
 <div class="section" id="randomhex">
 <h2>randomHex<a class="headerlink" href="#randomhex" title="Permalink to this headline">¶</a></h2>
@@ -410,7 +410,7 @@ This means arguments will be ABI converted and tightly packed before being hashe
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">isAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Checks if a given string is a valid Ethereum address.
+<p>Checks if a given string is a valid Vapory address.
 It will also check the checksum, if the address has upper and lowercase letters.</p>
 <div class="section" id="id30">
 <h3>Parameters<a class="headerlink" href="#id30" title="Permalink to this headline">¶</a></h3>
@@ -448,7 +448,7 @@ It will also check the checksum, if the address has upper and lowercase letters.
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toChecksumAddress</span><span class="p">(</span><span class="nx">address</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Will convert an upper or lowercase Ethereum address to a checksum address.</p>
+<p>Will convert an upper or lowercase Vapory address to a checksum address.</p>
 <div class="section" id="id33">
 <h3>Parameters<a class="headerlink" href="#id33" title="Permalink to this headline">¶</a></h3>
 <ol class="arabic simple">
@@ -815,44 +815,44 @@ Text strings will be interpreted as UTF-8 strings.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="nx">number</span> <span class="p">[,</span> <span class="nx">unit</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Converts any <a class="reference external" href="http://ethdocs.org/en/latest/ether.html">ether value</a> value into <a class="reference external" href="http://ethereum.stackexchange.com/questions/253/the-ether-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na">wei</a>.</p>
+<p>Converts any <a class="reference external" href="http://ethdocs.org/en/latest/vapor.html">vapor value</a> value into <a class="reference external" href="http://vapory.stackexchange.com/questions/253/the-vapor-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na">wei</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">&#8220;wei&#8221; are the smallest ethere unit, and you should always make calculations in wei and convert only for display reasons.</p>
+<p class="last">&#8220;wei&#8221; are the smallest vapore unit, and you should always make calculations in wei and convert only for display reasons.</p>
 </div>
 <div class="section" id="id76">
 <h3>Parameters<a class="headerlink" href="#id76" title="Permalink to this headline">¶</a></h3>
 <p>1. <code class="docutils literal"><span class="pre">number</span></code> - <code class="docutils literal"><span class="pre">String|Number|BN</span></code>: The value.
-1. <code class="docutils literal"><span class="pre">unit</span></code> - <code class="docutils literal"><span class="pre">String</span></code> (optional, defaults to <code class="docutils literal"><span class="pre">&quot;ether&quot;</span></code>): The ether to convert from. Possible units are:</p>
+1. <code class="docutils literal"><span class="pre">unit</span></code> - <code class="docutils literal"><span class="pre">String</span></code> (optional, defaults to <code class="docutils literal"><span class="pre">&quot;vapor&quot;</span></code>): The vapor to convert from. Possible units are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">noether</span></code>: &#8216;0&#8217;</li>
+<li><code class="docutils literal"><span class="pre">novapor</span></code>: &#8216;0&#8217;</li>
 <li><code class="docutils literal"><span class="pre">wei</span></code>: &#8216;1&#8217;</li>
 <li><code class="docutils literal"><span class="pre">kwei</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Kwei</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">babbage</span></code>: &#8216;1000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">femtoether</span></code>: &#8216;1000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">femtovapor</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">mwei</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Mwei</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">lovelace</span></code>: &#8216;1000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">picoether</span></code>: &#8216;1000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">picovapor</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">gwei</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Gwei</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">shannon</span></code>: &#8216;1000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">nanoether</span></code>: &#8216;1000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">nanovapor</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">nano</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">szabo</span></code>: &#8216;1000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">microether</span></code>: &#8216;1000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">microvapor</span></code>: &#8216;1000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">micro</span></code>: &#8216;1000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">finney</span></code>: &#8216;1000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">milliether</span></code>: &#8216;1000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">millivapor</span></code>: &#8216;1000000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">milli</span></code>: &#8216;1000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">ether</span></code>: &#8216;1000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">kether</span></code>: &#8216;1000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">vapor</span></code>: &#8216;1000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">kvapor</span></code>: &#8216;1000000000000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">grand</span></code>: &#8216;1000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">mether</span></code>: &#8216;1000000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">gether</span></code>: &#8216;1000000000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">tether</span></code>: &#8216;1000000000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">mvapor</span></code>: &#8216;1000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">gvapor</span></code>: &#8216;1000000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">tvapor</span></code>: &#8216;1000000000000000000000000000000&#8217;</li>
 </ul>
 </div></blockquote>
 </div>
@@ -862,7 +862,7 @@ Text strings will be interpreted as UTF-8 strings.</p>
 </div>
 <div class="section" id="id79">
 <h3>Example<a class="headerlink" href="#id79" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;ether&#39;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;vapor&#39;</span><span class="p">);</span>
 <span class="o">&gt;</span> <span class="s2">&quot;1000000000000000000&quot;</span>
 
 <span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">toWei</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;finney&#39;</span><span class="p">);</span>
@@ -883,44 +883,44 @@ Text strings will be interpreted as UTF-8 strings.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="nx">number</span> <span class="p">[,</span> <span class="nx">unit</span><span class="p">])</span>
 </pre></div>
 </div>
-<p>Converts any <a class="reference external" href="http://ethereum.stackexchange.com/questions/253/the-ether-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na">wei</a> value into a <a class="reference external" href="http://ethdocs.org/en/latest/ether.html">ether value</a>.</p>
+<p>Converts any <a class="reference external" href="http://vapory.stackexchange.com/questions/253/the-vapor-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na">wei</a> value into a <a class="reference external" href="http://ethdocs.org/en/latest/vapor.html">vapor value</a>.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">&#8220;wei&#8221; are the smallest ethere unit, and you should always make calculations in wei and convert only for display reasons.</p>
+<p class="last">&#8220;wei&#8221; are the smallest vapore unit, and you should always make calculations in wei and convert only for display reasons.</p>
 </div>
 <div class="section" id="id82">
 <h3>Parameters<a class="headerlink" href="#id82" title="Permalink to this headline">¶</a></h3>
 <p>1. <code class="docutils literal"><span class="pre">number</span></code> - <code class="docutils literal"><span class="pre">String|Number|BN</span></code>: The value in wei.
-1. <code class="docutils literal"><span class="pre">unit</span></code> - <code class="docutils literal"><span class="pre">String</span></code> (optional, defaults to <code class="docutils literal"><span class="pre">&quot;ether&quot;</span></code>): The ether to convert to. Possible units are:</p>
+1. <code class="docutils literal"><span class="pre">unit</span></code> - <code class="docutils literal"><span class="pre">String</span></code> (optional, defaults to <code class="docutils literal"><span class="pre">&quot;vapor&quot;</span></code>): The vapor to convert to. Possible units are:</p>
 <blockquote>
 <div><ul class="simple">
-<li><code class="docutils literal"><span class="pre">noether</span></code>: &#8216;0&#8217;</li>
+<li><code class="docutils literal"><span class="pre">novapor</span></code>: &#8216;0&#8217;</li>
 <li><code class="docutils literal"><span class="pre">wei</span></code>: &#8216;1&#8217;</li>
 <li><code class="docutils literal"><span class="pre">kwei</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Kwei</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">babbage</span></code>: &#8216;1000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">femtoether</span></code>: &#8216;1000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">femtovapor</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">mwei</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Mwei</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">lovelace</span></code>: &#8216;1000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">picoether</span></code>: &#8216;1000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">picovapor</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">gwei</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Gwei</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">shannon</span></code>: &#8216;1000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">nanoether</span></code>: &#8216;1000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">nanovapor</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">nano</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">szabo</span></code>: &#8216;1000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">microether</span></code>: &#8216;1000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">microvapor</span></code>: &#8216;1000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">micro</span></code>: &#8216;1000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">finney</span></code>: &#8216;1000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">milliether</span></code>: &#8216;1000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">millivapor</span></code>: &#8216;1000000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">milli</span></code>: &#8216;1000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">ether</span></code>: &#8216;1000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">kether</span></code>: &#8216;1000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">vapor</span></code>: &#8216;1000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">kvapor</span></code>: &#8216;1000000000000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">grand</span></code>: &#8216;1000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">mether</span></code>: &#8216;1000000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">gether</span></code>: &#8216;1000000000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">tether</span></code>: &#8216;1000000000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">mvapor</span></code>: &#8216;1000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">gvapor</span></code>: &#8216;1000000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">tvapor</span></code>: &#8216;1000000000000000000000000000000&#8217;</li>
 </ul>
 </div></blockquote>
 </div>
@@ -930,7 +930,7 @@ Text strings will be interpreted as UTF-8 strings.</p>
 </div>
 <div class="section" id="id85">
 <h3>Example<a class="headerlink" href="#id85" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;ether&#39;</span><span class="p">);</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;vapor&#39;</span><span class="p">);</span>
 <span class="o">&gt;</span> <span class="s2">&quot;0.000000000000000001&quot;</span>
 
 <span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">fromWei</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;finney&#39;</span><span class="p">);</span>
@@ -951,40 +951,40 @@ Text strings will be interpreted as UTF-8 strings.</p>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">unitMap</span>
 </pre></div>
 </div>
-<p>Shows all possible <a class="reference external" href="http://ethdocs.org/en/latest/ether.html">ether value</a> and their amount in <a class="reference external" href="http://ethereum.stackexchange.com/questions/253/the-ether-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na">wei</a>.</p>
+<p>Shows all possible <a class="reference external" href="http://ethdocs.org/en/latest/vapor.html">vapor value</a> and their amount in <a class="reference external" href="http://vapory.stackexchange.com/questions/253/the-vapor-denominations-are-called-finney-szabo-and-wei-what-who-are-these-na">wei</a>.</p>
 <div class="section" id="retrun-value">
 <h3>Retrun value<a class="headerlink" href="#retrun-value" title="Permalink to this headline">¶</a></h3>
 <ul>
 <li><dl class="first docutils">
 <dt><code class="docutils literal"><span class="pre">Object</span></code> with the following properties:</dt>
 <dd><ul class="first last simple">
-<li><code class="docutils literal"><span class="pre">noether</span></code>: &#8216;0&#8217;</li>
+<li><code class="docutils literal"><span class="pre">novapor</span></code>: &#8216;0&#8217;</li>
 <li><code class="docutils literal"><span class="pre">wei</span></code>: &#8216;1&#8217;</li>
 <li><code class="docutils literal"><span class="pre">kwei</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Kwei</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">babbage</span></code>: &#8216;1000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">femtoether</span></code>: &#8216;1000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">femtovapor</span></code>: &#8216;1000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">mwei</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Mwei</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">lovelace</span></code>: &#8216;1000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">picoether</span></code>: &#8216;1000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">picovapor</span></code>: &#8216;1000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">gwei</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">Gwei</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">shannon</span></code>: &#8216;1000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">nanoether</span></code>: &#8216;1000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">nanovapor</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">nano</span></code>: &#8216;1000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">szabo</span></code>: &#8216;1000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">microether</span></code>: &#8216;1000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">microvapor</span></code>: &#8216;1000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">micro</span></code>: &#8216;1000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">finney</span></code>: &#8216;1000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">milliether</span></code>: &#8216;1000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">millivapor</span></code>: &#8216;1000000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">milli</span></code>: &#8216;1000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">ether</span></code>: &#8216;1000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">kether</span></code>: &#8216;1000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">vapor</span></code>: &#8216;1000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">kvapor</span></code>: &#8216;1000000000000000000000&#8217;</li>
 <li><code class="docutils literal"><span class="pre">grand</span></code>: &#8216;1000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">mether</span></code>: &#8216;1000000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">gether</span></code>: &#8216;1000000000000000000000000000&#8217;</li>
-<li><code class="docutils literal"><span class="pre">tether</span></code>: &#8216;1000000000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">mvapor</span></code>: &#8216;1000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">gvapor</span></code>: &#8216;1000000000000000000000000000&#8217;</li>
+<li><code class="docutils literal"><span class="pre">tvapor</span></code>: &#8216;1000000000000000000000000000000&#8217;</li>
 </ul>
 </dd>
 </dl>
@@ -995,33 +995,33 @@ Text strings will be interpreted as UTF-8 strings.</p>
 <h3>Example<a class="headerlink" href="#id88" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">utils</span><span class="p">.</span><span class="nx">unitMap</span>
 <span class="o">&gt;</span> <span class="p">{</span>
-    <span class="nx">noether</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
+    <span class="nx">novapor</span><span class="o">:</span> <span class="s1">&#39;0&#39;</span><span class="p">,</span>
     <span class="nx">wei</span><span class="o">:</span>        <span class="s1">&#39;1&#39;</span><span class="p">,</span>
     <span class="nx">kwei</span><span class="o">:</span>       <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
     <span class="nx">Kwei</span><span class="o">:</span>       <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
     <span class="nx">babbage</span><span class="o">:</span>    <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
-    <span class="nx">femtoether</span><span class="o">:</span> <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
+    <span class="nx">femtovapor</span><span class="o">:</span> <span class="s1">&#39;1000&#39;</span><span class="p">,</span>
     <span class="nx">mwei</span><span class="o">:</span>       <span class="s1">&#39;1000000&#39;</span><span class="p">,</span>
     <span class="nx">Mwei</span><span class="o">:</span>       <span class="s1">&#39;1000000&#39;</span><span class="p">,</span>
     <span class="nx">lovelace</span><span class="o">:</span>   <span class="s1">&#39;1000000&#39;</span><span class="p">,</span>
-    <span class="nx">picoether</span><span class="o">:</span>  <span class="s1">&#39;1000000&#39;</span><span class="p">,</span>
+    <span class="nx">picovapor</span><span class="o">:</span>  <span class="s1">&#39;1000000&#39;</span><span class="p">,</span>
     <span class="nx">gwei</span><span class="o">:</span>       <span class="s1">&#39;1000000000&#39;</span><span class="p">,</span>
     <span class="nx">Gwei</span><span class="o">:</span>       <span class="s1">&#39;1000000000&#39;</span><span class="p">,</span>
     <span class="nx">shannon</span><span class="o">:</span>    <span class="s1">&#39;1000000000&#39;</span><span class="p">,</span>
-    <span class="nx">nanoether</span><span class="o">:</span>  <span class="s1">&#39;1000000000&#39;</span><span class="p">,</span>
+    <span class="nx">nanovapor</span><span class="o">:</span>  <span class="s1">&#39;1000000000&#39;</span><span class="p">,</span>
     <span class="nx">nano</span><span class="o">:</span>       <span class="s1">&#39;1000000000&#39;</span><span class="p">,</span>
     <span class="nx">szabo</span><span class="o">:</span>      <span class="s1">&#39;1000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">microether</span><span class="o">:</span> <span class="s1">&#39;1000000000000&#39;</span><span class="p">,</span>
+    <span class="nx">microvapor</span><span class="o">:</span> <span class="s1">&#39;1000000000000&#39;</span><span class="p">,</span>
     <span class="nx">micro</span><span class="o">:</span>      <span class="s1">&#39;1000000000000&#39;</span><span class="p">,</span>
     <span class="nx">finney</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">milliether</span><span class="o">:</span> <span class="s1">&#39;1000000000000000&#39;</span><span class="p">,</span>
+    <span class="nx">millivapor</span><span class="o">:</span> <span class="s1">&#39;1000000000000000&#39;</span><span class="p">,</span>
     <span class="nx">milli</span><span class="o">:</span>      <span class="s1">&#39;1000000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">ether</span><span class="o">:</span>      <span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">kether</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
+    <span class="nx">vapor</span><span class="o">:</span>      <span class="s1">&#39;1000000000000000000&#39;</span><span class="p">,</span>
+    <span class="nx">kvapor</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
     <span class="nx">grand</span><span class="o">:</span>      <span class="s1">&#39;1000000000000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">mether</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">gether</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000000000&#39;</span><span class="p">,</span>
-    <span class="nx">tether</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000000000000&#39;</span>
+    <span class="nx">mvapor</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000000&#39;</span><span class="p">,</span>
+    <span class="nx">gvapor</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000000000&#39;</span><span class="p">,</span>
+    <span class="nx">tvapor</span><span class="o">:</span>     <span class="s1">&#39;1000000000000000000000000000000&#39;</span>
 <span class="p">}</span>
 </pre></div>
 </div>
@@ -1351,7 +1351,7 @@ Text strings will be interpreted as UTF-8 strings.</p>
         <li class="right" >
           <a href="web3-shh.html" title="web3.shh"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">

@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <title>Glossary &#8212; web3.js 1.0.0 documentation</title>
-    
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" />
     <link rel="next" title="web3" href="web3.html" />
-    <link rel="prev" title="Callbacks Promises Events" href="callbacks-promises-events.html" /> 
+    <link rel="prev" title="Callbacks Promises Events" href="callbacks-promises-events.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,26 +42,26 @@
         <li class="right" >
           <a href="callbacks-promises-events.html" title="Callbacks Promises Events"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/ethereum/wiki/wiki/JavaScript-API">github.com/ethereum/wiki/wiki/JavaScript-API</a>.</p>
+<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/vaporyco/wiki/wiki/JavaScript-API">github.com/vaporyco/wiki/wiki/JavaScript-API</a>.</p>
 </div>
 <div class="section" id="glossary">
 <h1>Glossary<a class="headerlink" href="#glossary" title="Permalink to this headline">¶</a></h1>
 <hr class="docutils" id="glossary-json-interface" />
 <div class="section" id="json-interface">
 <h2>json interface<a class="headerlink" href="#json-interface" title="Permalink to this headline">¶</a></h2>
-<p>The json interface is a json object describing the <a class="reference external" href="https://github.com/ethereum/wiki/wiki/Ethereum-Contract-ABI">Application Binary Interface (ABI)</a> for an Ethereum smart contract.</p>
-<p>Using this json interface web3.js is able to create JavaScript object representing the smart contract and its methods and events using the <a class="reference internal" href="web3-eth-contract.html#eth-contract"><span class="std std-ref">web3.eth.Contract object</span></a>.</p>
+<p>The json interface is a json object describing the <a class="reference external" href="https://github.com/vaporyco/wiki/wiki/Vapory-Contract-ABI">Application Binary Interface (ABI)</a> for an Vapory smart contract.</p>
+<p>Using this json interface web3.js is able to create JavaScript object representing the smart contract and its methods and events using the <a class="reference internal" href="web3-vap-contract.html#vap-contract"><span class="std std-ref">web3.vap.Contract object</span></a>.</p>
 <div class="section" id="specification">
 <h3>Specification<a class="headerlink" href="#specification" title="Permalink to this headline">¶</a></h3>
 <p>Functions:</p>
@@ -69,7 +69,7 @@
 <li><code class="docutils literal"><span class="pre">type</span></code>: <code class="docutils literal"><span class="pre">&quot;function&quot;</span></code>, <code class="docutils literal"><span class="pre">&quot;constructor&quot;</span></code> (can be omitted, defaulting to <code class="docutils literal"><span class="pre">&quot;function&quot;</span></code>; <code class="docutils literal"><span class="pre">&quot;fallback&quot;</span></code> also possible but not relevant in web3.js);</li>
 <li><code class="docutils literal"><span class="pre">name</span></code>: the name of the function (only present for function types);</li>
 <li><code class="docutils literal"><span class="pre">constant</span></code>: <code class="docutils literal"><span class="pre">true</span></code> if function is specified to not modify the blockchain state;</li>
-<li><code class="docutils literal"><span class="pre">payable</span></code>: <code class="docutils literal"><span class="pre">true</span></code> if function accepts ether, defaults to <code class="docutils literal"><span class="pre">false</span></code>;</li>
+<li><code class="docutils literal"><span class="pre">payable</span></code>: <code class="docutils literal"><span class="pre">true</span></code> if function accepts vapor, defaults to <code class="docutils literal"><span class="pre">false</span></code>;</li>
 <li><code class="docutils literal"><span class="pre">stateMutability</span></code>: a string with one of the following values: <code class="docutils literal"><span class="pre">pure</span></code> (specified to not read blockchain state), <code class="docutils literal"><span class="pre">view</span></code> (same as <code class="docutils literal"><span class="pre">constant</span></code> above), <code class="docutils literal"><span class="pre">nonpayable</span></code> and <code class="docutils literal"><span class="pre">payable</span></code> (same as <code class="docutils literal"><span class="pre">payable</span></code> above);</li>
 <li><code class="docutils literal"><span class="pre">inputs</span></code>: an array of objects, each of which contains:<ul>
 <li><code class="docutils literal"><span class="pre">name</span></code>: the name of the parameter;</li>
@@ -198,7 +198,7 @@
         <li class="right" >
           <a href="callbacks-promises-events.html" title="Callbacks Promises Events"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">

@@ -24,7 +24,7 @@
 
 
 var _ = require('underscore');
-var errors = require('web3-core-helpers').errors;
+var errors = require('@vapory/web3-core-helpers').errors;
 var Jsonrpc = require('./jsonrpc.js');
 var BatchManager = require('./batch.js');
 var givenProvider = require('./givenProvider.js');
@@ -33,7 +33,7 @@ var givenProvider = require('./givenProvider.js');
 
     /**
  * It's responsible for passing messages to providers
- * It's also responsible for polling the ethereum node for incoming messages
+ * It's also responsible for polling the vapory node for incoming messages
  * Default poll timeout is 1 second
  * Singleton
  */
@@ -50,9 +50,9 @@ var RequestManager = function RequestManager(provider) {
 RequestManager.givenProvider = givenProvider;
 
 RequestManager.providers = {
-    WebsocketProvider: require('web3-providers-ws'),
-    HttpProvider: require('web3-providers-http'),
-    IpcProvider: require('web3-providers-ipc')
+    WebsocketProvider: require('@vapory/web3-providers-ws'),
+    HttpProvider: require('@vapory/web3-providers-http'),
+    IpcProvider: require('@vapory/web3-providers-ipc')
 };
 
 
@@ -178,7 +178,7 @@ RequestManager.prototype.sendBatch = function (data, callback) {
  * @method addSubscription
  * @param {String} id           the subscription id
  * @param {String} name         the subscription name
- * @param {String} type         the subscription namespace (eth, personal, etc)
+ * @param {String} type         the subscription namespace (vap, personal, etc)
  * @param {Function} callback   the callback to call for incoming notifications
  */
 RequestManager.prototype.addSubscription = function (id, name, type, callback) {

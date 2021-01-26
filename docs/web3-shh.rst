@@ -8,20 +8,20 @@ web3.shh
 
 
 The ``web3-shh`` package allows you to interact with an the whisper protocol for broadcasting.
-For more see `Whisper  Overview <https://github.com/ethereum/go-ethereum/wiki/Whisper>`_.
+For more see `Whisper  Overview <https://github.com/vaporyco/go-vapory/wiki/Whisper>`_.
 
 
 .. code-block:: javascript
 
-    var Shh = require('web3-shh');
+    var Shh = require('@vapory/web3-shh');
 
-    // "Shh.providers.givenProvider" will be set if in an Ethereum supported browser.
+    // "Shh.providers.givenProvider" will be set if in an Vapory supported browser.
     var shh = new Shh(Shh.givenProvider || 'ws://some.local-or-remote.node:8546');
 
 
     // or using the web3 umbrella package
 
-    var Web3 = require('web3');
+    var Web3 = require('@vapory/web3');
     var web3 = new Web3(Web3.givenProvider || 'ws://some.local-or-remote.node:8546');
 
     // -> web3.shh
@@ -883,7 +883,7 @@ clearSubscriptions
 
 Resets subscriptions.
 
-.. note:: This will not reset subscriptions from other packages like ``web3-eth``, as they use their own requestManager.
+.. note:: This will not reset subscriptions from other packages like ``web3-vap``, as they use their own requestManager.
 
 ----------
 Parameters

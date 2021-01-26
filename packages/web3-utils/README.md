@@ -29,7 +29,7 @@ This will expose the `Web3Utils` object on the window object.
 
 ```js
 // in node.js
-var Web3Utils = require('web3-utils');
+var Web3Utils = require('@vapory/web3-utils');
 console.log(Web3Utils);
 {
     sha3: function(){},
@@ -41,6 +41,6 @@ console.log(Web3Utils);
 
 
 [docs]: http://web3js.readthedocs.io/en/1.0/
-[repo]: https://github.com/ethereum/web3.js
+[repo]: https://github.com/vaporyco/web3.js
 
 

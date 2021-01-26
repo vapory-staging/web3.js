@@ -1,6 +1,6 @@
 var chai = require('chai');
 var assert = chai.assert;
-var Eth = require('../packages/web3-eth');
+var Vap = require('../packages/web3-vap');
 
 
 var address = '0x1234567890123456789012345678901234567890';
@@ -235,8 +235,8 @@ describe('lib/web3/event', function () {
     describe('encode', function () {
         tests.forEach(function (test, index) {
             it('test no: ' + index, function () {
-                var eth = new Eth();
-                var contract = new eth.Contract([test.abi], address);
+                var vap = new Vap();
+                var contract = new vap.Contract([test.abi], address);
 
 
                 var result = contract._encodeEventABI(test.abi, test.options);

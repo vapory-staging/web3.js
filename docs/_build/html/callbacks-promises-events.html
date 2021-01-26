@@ -5,12 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    
+
     <title>Callbacks Promises Events &#8212; web3.js 1.0.0 documentation</title>
-    
+
     <link rel="stylesheet" href="_static/classic.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
+
     <script type="text/javascript">
       var DOCUMENTATION_OPTIONS = {
         URL_ROOT:    './',
@@ -27,7 +27,7 @@
     <link rel="search" title="Search" href="search.html" />
     <link rel="top" title="web3.js 1.0.0 documentation" href="index.html" />
     <link rel="next" title="Glossary" href="glossary.html" />
-    <link rel="prev" title="Getting Started" href="getting-started.html" /> 
+    <link rel="prev" title="Getting Started" href="getting-started.html" />
   </head>
   <body role="document">
     <div class="related" role="navigation" aria-label="related navigation">
@@ -42,30 +42,30 @@
         <li class="right" >
           <a href="getting-started.html" title="Getting Started"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
-    </div>  
+    </div>
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
           <div class="body" role="main">
-            
+
   <div class="admonition note" id="promievent">
 <p class="first admonition-title">Note</p>
-<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/ethereum/wiki/wiki/JavaScript-API">github.com/ethereum/wiki/wiki/JavaScript-API</a>.</p>
+<p class="last">This documentation is work in progress and web3.js 1.0 is not yet released! You can find the current documentation for web3 0.x.x at <a class="reference external" href="https://github.com/vaporyco/wiki/wiki/JavaScript-API">github.com/vaporyco/wiki/wiki/JavaScript-API</a>.</p>
 </div>
 <div class="section" id="callbacks-promises-events">
 <h1>Callbacks Promises Events<a class="headerlink" href="#callbacks-promises-events" title="Permalink to this headline">¶</a></h1>
 <p>To help web3 integrate into all kind of projects with different standards
 we provide multiple ways to act on asynchronous functions.</p>
 <p>Most web3.js objects allow a callback as the last parameter, as well as returning promises to chain functions.</p>
-<p>Ethereum as a blockchain has different levels of finality and therefore needs to return multiple &#8220;stages&#8221; of an action.
-To cope with requirement we return a &#8220;promiEvent&#8221; for functions like <code class="docutils literal"><span class="pre">web3.eth.sendTransaction</span></code> or contract methods.
+<p>Vapory as a blockchain has different levels of finality and therefore needs to return multiple &#8220;stages&#8221; of an action.
+To cope with requirement we return a &#8220;promiEvent&#8221; for functions like <code class="docutils literal"><span class="pre">web3.vap.sendTransaction</span></code> or contract methods.
 This &#8220;promiEvent&#8221; is a promise combined with an event emitter to allow acting on different stages of action on the blockchain, like a transaction.</p>
 <p>PromiEvents work like a normal promises with added <code class="docutils literal"><span class="pre">on</span></code>, <code class="docutils literal"><span class="pre">once</span></code> and <code class="docutils literal"><span class="pre">off</span></code> functions.
 This way developers can watch for additional events like on &#8220;receipt&#8221; or &#8220;transactionHash&#8221;.</p>
-<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">eth</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">({</span><span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;0x123...&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="s1">&#39;0x432...&#39;</span><span class="p">})</span>
+<div class="highlight-javascript"><div class="highlight"><pre><span></span><span class="nx">web3</span><span class="p">.</span><span class="nx">vap</span><span class="p">.</span><span class="nx">sendTransaction</span><span class="p">({</span><span class="nx">from</span><span class="o">:</span> <span class="s1">&#39;0x123...&#39;</span><span class="p">,</span> <span class="nx">data</span><span class="o">:</span> <span class="s1">&#39;0x432...&#39;</span><span class="p">})</span>
 <span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;transactionHash&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">hash</span><span class="p">){</span> <span class="p">...</span> <span class="p">})</span>
 <span class="p">.</span><span class="nx">once</span><span class="p">(</span><span class="s1">&#39;receipt&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">receipt</span><span class="p">){</span> <span class="p">...</span> <span class="p">})</span>
 <span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;confirmation&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">confNumber</span><span class="p">,</span> <span class="nx">receipt</span><span class="p">){</span> <span class="p">...</span> <span class="p">})</span>
@@ -122,7 +122,7 @@ This way developers can watch for additional events like on &#8220;receipt&#8221
         <li class="right" >
           <a href="getting-started.html" title="Getting Started"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li> 
+        <li class="nav-item nav-item-0"><a href="index.html">web3.js 1.0.0 documentation</a> &#187;</li>
       </ul>
     </div>
     <div class="footer" role="contentinfo">
