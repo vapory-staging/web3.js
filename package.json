@@ -1,7 +1,7 @@
 {
   "name": "@vapory/web3",
   "namespace": "vapory",
-  "version": "1.0.0-gamma.30",
+  "version": "1.0.0-delta.30",
   "description": "Vapory JavaScript API wrapper repository",
   "license": "LGPL-3.0",
   "directories": {

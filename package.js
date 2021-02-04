@@ -1,7 +1,7 @@
 /* jshint ignore:start */
 Package.describe({
     name: 'vapory:web3',
-    version: '1.0.0-gamma.30',
+    version: '1.0.0-delta.30',
     summary: 'Vapory JavaScript API, middleware to talk to a vapory node over RPC',
     git: 'https://github.com/vaporyco/vapory.js',
     // By default, Meteor will default to using README.md for documentation.

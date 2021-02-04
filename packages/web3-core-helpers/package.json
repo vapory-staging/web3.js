@@ -1,14 +1,14 @@
 {
     "name": "@vapory/web3-core-helpers",
     "namespace": "vapory",
-    "version": "1.0.0-gamma.30",
+    "version": "1.0.0-delta.30",
     "description": "Web3 core tools helper for sub packages. This is an internal package.",
     "repository": "https://github.com/vaporyco/web3.js/tree/master/packages/web3-core-helpers",
     "license": "LGPL-3.0",
     "main": "src/index.js",
     "dependencies": {
-        "@vapory/web3-utils": "1.0.0-gamma.30",
-        "@vapory/web3-vap-iban": "1.0.0-gamma.30",
+        "@vapory/web3-utils": "1.0.0-delta.30",
+        "@vapory/web3-vap-iban": "1.0.0-delta.30",
         "underscore": "1.8.3"
     }
 }

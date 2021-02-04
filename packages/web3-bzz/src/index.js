@@ -23,7 +23,7 @@
 "use strict";
 
 var _ = require('underscore');
-var swarm = require("swarm-js");
+var swarm = require("@vaporsphere/swarm-js");
 
 
 var Bzz = function Bzz(provider) {
